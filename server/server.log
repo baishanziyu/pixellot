@@ -1,0 +1,1684 @@
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 10:11:50 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x558cb4a9c790
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x558cb4a9c790 pid: 1499 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1499)
+spawned uWSGI worker 1 (pid: 1503, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 10:12:01 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8080).
+bind(): Address already in use [core/socket.c line 769]
+[pid: 1503|app: 0|req: 1/1] 122.115.232.155 () {52 vars in 826 bytes} [Fri Aug 21 10:12:10 2020] OPTIONS /login => generated 0 bytes in 3 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 1503|app: 0|req: 2/2] 122.115.232.155 () {50 vars in 841 bytes} [Fri Aug 21 10:12:10 2020] POST /login => generated 188 bytes in 129 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 1503|app: 0|req: 3/3] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 10:12:10 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1503|app: 0|req: 4/4] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 10:12:10 2020] GET /productions/ => generated 5170 bytes in 106 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1503|app: 0|req: 5/5] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 10:12:17 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1503|app: 0|req: 6/6] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 10:12:17 2020] GET /productions/ => generated 5170 bytes in 96 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+...brutally killing workers...
+Gracefully killing worker 1 (pid: 1503)...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/ubuntu/pixellot/server
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:8080)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 10:33:02 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x5630e7438da0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5630e7438da0 pid: 1499 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1499)
+spawned uWSGI worker 1 (pid: 2034, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 11:38:31 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x560d8a0fd7b0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x560d8a0fd7b0 pid: 1525 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1525)
+spawned uWSGI worker 1 (pid: 1529, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 11:38:43 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8080).
+bind(): Address already in use [core/socket.c line 769]
+[pid: 1529|app: 0|req: 1/1] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 11:38:48 2020] OPTIONS /productions/ => generated 23 bytes in 3 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1529|app: 0|req: 2/2] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 11:38:48 2020] GET /productions/ => generated 5170 bytes in 203 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/ubuntu/pixellot/server
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:8080)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 11:38:58 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x561564cc8d40
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x561564cc8d40 pid: 1525 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1525)
+spawned uWSGI worker 1 (pid: 1612, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 11:44:38 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x559a3f3ca7b0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x559a3f3ca7b0 pid: 1397 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1397)
+spawned uWSGI worker 1 (pid: 1404, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+[pid: 1404|app: 0|req: 1/1] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 11:45:40 2020] OPTIONS /productions/ => generated 23 bytes in 3 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1404|app: 0|req: 2/2] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 11:45:40 2020] GET /productions/ => generated 5170 bytes in 199 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/ubuntu/pixellot/server
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:8080)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 11:47:02 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x56534f585d40
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x56534f585d40 pid: 1397 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1397)
+spawned uWSGI worker 1 (pid: 1570, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 11:51:49 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x56390ffaf790
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x56390ffaf790 pid: 1580 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1580)
+spawned uWSGI worker 1 (pid: 1587, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+[pid: 1587|app: 0|req: 1/1] 122.115.232.155 () {52 vars in 836 bytes} [Fri Aug 21 11:51:58 2020] OPTIONS /login => generated 0 bytes in 3 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 1587|app: 0|req: 2/2] 122.115.232.155 () {50 vars in 851 bytes} [Fri Aug 21 11:51:58 2020] POST /login => generated 188 bytes in 156 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 1587|app: 0|req: 3/3] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 11:51:59 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1587|app: 0|req: 4/4] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 11:51:59 2020] GET /productions/ => generated 5170 bytes in 105 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+...brutally killing workers...
+Gracefully killing worker 1 (pid: 1587)...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/ubuntu/pixellot/server
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:8080)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 11:56:17 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x56481a016da0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x56481a016da0 pid: 1580 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1580)
+spawned uWSGI worker 1 (pid: 1702, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 12:14:08 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x56479e475780
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x56479e475780 pid: 1857 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1857)
+spawned uWSGI worker 1 (pid: 1864, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+[pid: 1864|app: 0|req: 1/1] 122.115.232.155 () {52 vars in 836 bytes} [Fri Aug 21 12:14:18 2020] OPTIONS /login => generated 0 bytes in 3 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 1864|app: 0|req: 2/2] 122.115.232.155 () {50 vars in 851 bytes} [Fri Aug 21 12:14:18 2020] POST /login => generated 188 bytes in 134 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 1864|app: 0|req: 3/3] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 12:14:19 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1864|app: 0|req: 4/4] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 12:14:19 2020] GET /productions/ => generated 5170 bytes in 104 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+...brutally killing workers...
+Gracefully killing worker 1 (pid: 1864)...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/ubuntu/pixellot/server
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:8080)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 12:14:41 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x5643d6165d90
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5643d6165d90 pid: 1857 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1857)
+spawned uWSGI worker 1 (pid: 1966, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 12:17:42 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x561f5306d7b0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x561f5306d7b0 pid: 1500 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1500)
+spawned uWSGI worker 1 (pid: 1507, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+[pid: 1507|app: 0|req: 1/1] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 12:17:45 2020] OPTIONS /productions/ => generated 23 bytes in 3 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1507|app: 0|req: 2/2] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 12:17:45 2020] GET /productions/ => generated 5170 bytes in 176 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1507|app: 0|req: 3/3] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 12:17:46 2020] GET /productions/ => generated 5170 bytes in 99 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1507|app: 0|req: 4/4] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 12:17:47 2020] GET /productions/ => generated 5170 bytes in 306 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1507|app: 0|req: 5/5] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 12:17:48 2020] GET /productions/ => generated 5170 bytes in 91 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1507|app: 0|req: 6/6] 122.115.232.155 () {52 vars in 836 bytes} [Fri Aug 21 12:17:58 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 1507|app: 0|req: 7/7] 122.115.232.155 () {50 vars in 851 bytes} [Fri Aug 21 12:17:58 2020] POST /login => generated 188 bytes in 37 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 1507|app: 0|req: 8/8] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 12:17:58 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1507|app: 0|req: 9/9] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 12:17:58 2020] GET /productions/ => generated 5170 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/ubuntu/pixellot/server
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:8080)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 12:18:07 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x559c8667bd40
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x559c8667bd40 pid: 1500 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1500)
+spawned uWSGI worker 1 (pid: 1564, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+Fri Aug 21 12:19:36 2020 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 12:21:41 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x563bfe75d7b0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x563bfe75d7b0 pid: 1485 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1485)
+spawned uWSGI worker 1 (pid: 1489, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 12:21:56 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8080).
+bind(): Address already in use [core/socket.c line 769]
+[pid: 1489|app: 0|req: 1/1] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 12:21:58 2020] OPTIONS /productions/ => generated 23 bytes in 3 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1489|app: 0|req: 2/2] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 12:21:58 2020] GET /productions/ => generated 5170 bytes in 199 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1489|app: 0|req: 3/3] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 12:22:00 2020] GET /productions/ => generated 5170 bytes in 96 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 12:24:58 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8080).
+bind(): Address already in use [core/socket.c line 769]
+[pid: 1489|app: 0|req: 4/4] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 12:25:03 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1489|app: 0|req: 5/5] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 12:25:03 2020] GET /productions/ => generated 5170 bytes in 98 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1489|app: 0|req: 6/6] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 12:25:04 2020] GET /productions/ => generated 5170 bytes in 98 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+...brutally killing workers...
+Gracefully killing worker 1 (pid: 1489)...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/ubuntu/pixellot/server
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:8080)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 12:26:19 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x561ad9dafd40
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x561ad9dafd40 pid: 1485 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1485)
+spawned uWSGI worker 1 (pid: 1689, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 13:12:31 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x560abb53f420
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x560abb53f420 pid: 1499 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1499)
+spawned uWSGI worker 1 (pid: 1506, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+[pid: 1506|app: 0|req: 1/1] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 13:12:35 2020] OPTIONS /productions/ => generated 23 bytes in 3 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 2/2] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 13:12:35 2020] GET /productions/ => generated 5170 bytes in 219 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 3/3] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 13:12:38 2020] GET /productions/ => generated 5170 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 13:15:42 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot/server
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8080).
+bind(): Address already in use [core/socket.c line 769]
+[pid: 1506|app: 0|req: 4/4] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 13:15:46 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 5/5] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 13:15:46 2020] GET /productions/ => generated 5170 bytes in 90 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 13:16:10 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8080).
+bind(): Address already in use [core/socket.c line 769]
+[pid: 1506|app: 0|req: 6/6] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 13:16:14 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 7/7] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 13:16:14 2020] GET /productions/ => generated 5170 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 8/8] 122.115.232.155 () {52 vars in 857 bytes} [Fri Aug 21 13:18:00 2020] OPTIONS /login => generated 0 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 337 bytes (0 switches on core 0)
+[pid: 1506|app: 0|req: 9/9] 122.115.232.155 () {50 vars in 872 bytes} [Fri Aug 21 13:18:01 2020] POST /login => generated 188 bytes in 38 msecs (HTTP/1.1 200) 5 headers in 178 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 10/10] 122.115.232.155 () {52 vars in 871 bytes} [Fri Aug 21 13:18:01 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 11/11] 122.115.232.155 () {48 vars in 930 bytes} [Fri Aug 21 13:18:01 2020] GET /productions/ => generated 5170 bytes in 96 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 12/12] 122.115.232.155 () {52 vars in 871 bytes} [Fri Aug 21 13:18:51 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 13/13] 122.115.232.155 () {48 vars in 930 bytes} [Fri Aug 21 13:18:51 2020] GET /productions/ => generated 5170 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 14/14] 122.115.232.155 () {52 vars in 871 bytes} [Fri Aug 21 13:19:23 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 15/15] 122.115.232.155 () {48 vars in 930 bytes} [Fri Aug 21 13:19:23 2020] GET /productions/ => generated 5170 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 16/16] 122.115.232.155 () {52 vars in 871 bytes} [Fri Aug 21 13:19:59 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 17/17] 122.115.232.155 () {48 vars in 930 bytes} [Fri Aug 21 13:19:59 2020] GET /productions/ => generated 5170 bytes in 91 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 18/18] 122.115.232.155 () {52 vars in 871 bytes} [Fri Aug 21 13:20:35 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 19/19] 122.115.232.155 () {48 vars in 930 bytes} [Fri Aug 21 13:20:35 2020] GET /productions/ => generated 5170 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 20/20] 122.115.232.155 () {52 vars in 900 bytes} [Fri Aug 21 13:21:21 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 21/21] 122.115.232.155 () {48 vars in 959 bytes} [Fri Aug 21 13:21:21 2020] GET /productions/ => generated 5170 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 22/22] 122.115.232.155 () {50 vars in 865 bytes} [Fri Aug 21 13:22:02 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 1506|app: 0|req: 23/23] 123.150.181.248 () {56 vars in 1014 bytes} [Fri Aug 21 13:22:02 2020] POST /login => generated 188 bytes in 36 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 24/24] 122.115.232.155 () {50 vars in 889 bytes} [Fri Aug 21 13:22:03 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 25/25] 122.115.232.155 () {48 vars in 975 bytes} [Fri Aug 21 13:22:03 2020] GET /productions/ => generated 5170 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 26/26] 122.115.232.155 () {50 vars in 918 bytes} [Fri Aug 21 13:22:12 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 27/27] 122.115.232.155 () {48 vars in 1004 bytes} [Fri Aug 21 13:22:12 2020] GET /productions/ => generated 5170 bytes in 99 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 28/28] 122.115.232.155 () {50 vars in 889 bytes} [Fri Aug 21 13:22:23 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 29/29] 122.115.232.155 () {48 vars in 975 bytes} [Fri Aug 21 13:22:23 2020] GET /productions/ => generated 5170 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 30/30] 185.250.220.170 () {30 vars in 365 bytes} [Fri Aug 21 13:22:25 2020] HEAD /robots.txt => generated 0 bytes in 9 msecs (HTTP/1.0 404) 2 headers in 72 bytes (0 switches on core 0)
+[pid: 1506|app: 0|req: 31/31] 122.115.232.155 () {48 vars in 870 bytes} [Fri Aug 21 13:25:10 2020] GET /productions/ => generated 19 bytes in 2 msecs (HTTP/1.1 401) 3 headers in 149 bytes (1 switches on core 0)
+[pid: 1506|app: 0|req: 32/32] 122.115.232.155 () {50 vars in 865 bytes} [Fri Aug 21 13:27:19 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 1506|app: 0|req: 33/33] 123.150.181.248 () {56 vars in 1014 bytes} [Fri Aug 21 13:27:19 2020] POST /login => generated 188 bytes in 36 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 34/34] 122.115.232.155 () {50 vars in 889 bytes} [Fri Aug 21 13:27:20 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 35/35] 122.115.232.155 () {48 vars in 975 bytes} [Fri Aug 21 13:27:20 2020] GET /productions/ => generated 5170 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 36/36] 123.150.181.248 () {56 vars in 1014 bytes} [Fri Aug 21 13:27:20 2020] POST /login => generated 188 bytes in 36 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 37/37] 122.115.232.155 () {48 vars in 975 bytes} [Fri Aug 21 13:27:20 2020] GET /productions/ => generated 5170 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 38/38] 122.115.232.155 () {50 vars in 900 bytes} [Fri Aug 21 13:27:26 2020] OPTIONS /product_types/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 39/39] 122.115.232.155 () {48 vars in 986 bytes} [Fri Aug 21 13:27:26 2020] GET /product_types/ => generated 3254 bytes in 87 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 40/40] 122.115.232.155 () {50 vars in 881 bytes} [Fri Aug 21 13:27:30 2020] OPTIONS /iids/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 41/41] 122.115.232.155 () {48 vars in 967 bytes} [Fri Aug 21 13:27:30 2020] GET /iids/ => generated 5835 bytes in 125 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 42/42] 122.115.232.155 () {50 vars in 879 bytes} [Fri Aug 21 13:27:35 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 334 bytes (0 switches on core 0)
+[pid: 1506|app: 0|req: 43/43] 122.115.232.155 () {50 vars in 889 bytes} [Fri Aug 21 13:27:35 2020] OPTIONS /customers/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 44/44] 122.115.232.155 () {48 vars in 965 bytes} [Fri Aug 21 13:27:35 2020] GET /login => generated 23 bytes in 2 msecs (HTTP/1.1 200) 5 headers in 173 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 45/45] 122.115.232.155 () {48 vars in 975 bytes} [Fri Aug 21 13:27:35 2020] GET /customers/ => generated 35389 bytes in 42 msecs (HTTP/1.1 200) 5 headers in 176 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 46/46] 122.115.232.155 () {50 vars in 900 bytes} [Fri Aug 21 13:27:40 2020] OPTIONS /identifiers/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 47/47] 122.115.232.155 () {48 vars in 986 bytes} [Fri Aug 21 13:27:40 2020] GET /identifiers/ => generated 4019 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 48/48] 122.115.232.155 () {52 vars in 871 bytes} [Fri Aug 21 13:28:20 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 49/49] 122.115.232.155 () {48 vars in 930 bytes} [Fri Aug 21 13:28:20 2020] GET /productions/ => generated 5170 bytes in 96 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 50/50] 122.115.232.155 () {52 vars in 871 bytes} [Fri Aug 21 13:29:53 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 51/51] 122.115.232.155 () {48 vars in 930 bytes} [Fri Aug 21 13:29:53 2020] GET /productions/ => generated 5170 bytes in 91 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 52/52] 122.115.232.155 () {52 vars in 871 bytes} [Fri Aug 21 13:30:34 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 53/53] 122.115.232.155 () {48 vars in 930 bytes} [Fri Aug 21 13:30:35 2020] GET /productions/ => generated 5170 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 54/54] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 13:32:25 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 55/55] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 13:32:25 2020] GET /productions/ => generated 5170 bytes in 98 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 56/56] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 13:32:58 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 57/57] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 13:32:58 2020] GET /productions/ => generated 5170 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 13:35:30 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8080).
+bind(): Address already in use [core/socket.c line 769]
+[pid: 1506|app: 0|req: 58/58] 122.115.232.155 () {50 vars in 900 bytes} [Fri Aug 21 13:35:36 2020] OPTIONS /identifiers/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 59/59] 122.115.232.155 () {48 vars in 986 bytes} [Fri Aug 21 13:35:36 2020] GET /identifiers/ => generated 4019 bytes in 89 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 60/60] 122.115.232.155 () {50 vars in 889 bytes} [Fri Aug 21 13:35:38 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 61/61] 122.115.232.155 () {48 vars in 975 bytes} [Fri Aug 21 13:35:38 2020] GET /productions/ => generated 5170 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 62/62] 122.115.232.155 () {50 vars in 875 bytes} [Fri Aug 21 13:36:30 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 1506|app: 0|req: 63/63] 123.150.181.248 () {56 vars in 1024 bytes} [Fri Aug 21 13:36:30 2020] POST /login => generated 188 bytes in 36 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 64/64] 122.115.232.155 () {50 vars in 889 bytes} [Fri Aug 21 13:36:31 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 65/65] 122.115.232.155 () {48 vars in 975 bytes} [Fri Aug 21 13:36:31 2020] GET /productions/ => generated 5170 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 66/66] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 13:38:11 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 67/67] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 13:38:11 2020] GET /productions/ => generated 5170 bytes in 101 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 68/68] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 13:39:47 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 69/69] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 13:39:47 2020] GET /productions/ => generated 5170 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 70/70] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 13:42:14 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 71/71] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 13:42:14 2020] GET /productions/ => generated 5170 bytes in 108 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 72/72] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 13:44:41 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 73/73] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 13:44:41 2020] GET /productions/ => generated 5170 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 74/74] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 13:45:14 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 75/75] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 13:45:14 2020] GET /productions/ => generated 5170 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 76/76] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 13:45:31 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 77/77] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 13:45:31 2020] GET /productions/ => generated 5170 bytes in 162 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 78/78] 122.115.232.155 () {52 vars in 871 bytes} [Fri Aug 21 13:47:03 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 79/79] 122.115.232.155 () {48 vars in 930 bytes} [Fri Aug 21 13:47:03 2020] GET /productions/ => generated 5170 bytes in 96 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 80/80] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 13:47:15 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 81/81] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 13:47:15 2020] GET /productions/ => generated 5170 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 82/82] 122.115.232.155 () {52 vars in 871 bytes} [Fri Aug 21 13:48:13 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 83/83] 122.115.232.155 () {48 vars in 930 bytes} [Fri Aug 21 13:48:13 2020] GET /productions/ => generated 5170 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 84/84] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 13:48:16 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 85/85] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 13:48:16 2020] GET /productions/ => generated 5170 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 86/86] 122.115.232.155 () {52 vars in 871 bytes} [Fri Aug 21 13:48:30 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 87/87] 122.115.232.155 () {48 vars in 930 bytes} [Fri Aug 21 13:48:30 2020] GET /productions/ => generated 5170 bytes in 90 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 88/88] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 13:48:33 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 89/89] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 13:48:33 2020] GET /productions/ => generated 5170 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 90/90] 122.115.232.155 () {52 vars in 871 bytes} [Fri Aug 21 13:48:44 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 1506|app: 0|req: 91/91] 122.115.232.155 () {48 vars in 930 bytes} [Fri Aug 21 13:48:44 2020] GET /productions/ => generated 5170 bytes in 90 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/ubuntu
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:8080)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /home/ubuntu/pixellot/server/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 13:50:33 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x564b5666a2e0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x564b5666a2e0 pid: 1499 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1499)
+spawned uWSGI worker 1 (pid: 1997, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 14:03:04 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x558a0b82a420
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x558a0b82a420 pid: 1436 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1436)
+spawned uWSGI worker 1 (pid: 1443, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 14:03:30 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8080).
+bind(): Address already in use [core/socket.c line 769]
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 14:04:58 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8080).
+bind(): Address already in use [core/socket.c line 769]
+...brutally killing workers...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/ubuntu
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:8080)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /home/ubuntu/pixellot/server/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 14:05:15 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x55e4e638c2e0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x55e4e638c2e0 pid: 1436 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1436)
+spawned uWSGI worker 1 (pid: 1712, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 14:10:20 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x5604b31e3420
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5604b31e3420 pid: 1426 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1426)
+spawned uWSGI worker 1 (pid: 1433, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+[pid: 1433|app: 0|req: 1/1] 92.118.161.25 () {34 vars in 509 bytes} [Fri Aug 21 14:26:43 2020] GET / => generated 233 bytes in 13 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 2/2] 85.64.133.121 () {36 vars in 522 bytes} [Fri Aug 21 14:38:14 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 3/3] 122.228.19.79 () {38 vars in 516 bytes} [Fri Aug 21 15:01:02 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 4/4] 185.249.42.43 () {36 vars in 521 bytes} [Fri Aug 21 15:16:07 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 15:32:41 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8080).
+bind(): Address already in use [core/socket.c line 769]
+*** Starting uWSGI 2.0.18 (64bit) on [Fri Aug 21 15:35:07 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu/pixellot
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (0.0.0.0:8080).
+bind(): Address already in use [core/socket.c line 769]
+[pid: 1433|app: 0|req: 5/5] 122.115.232.155 () {52 vars in 826 bytes} [Fri Aug 21 15:35:16 2020] OPTIONS /login => generated 0 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 1433|app: 0|req: 6/6] 122.115.232.155 () {50 vars in 841 bytes} [Fri Aug 21 15:35:16 2020] POST /login => generated 188 bytes in 127 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 7/7] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 15:35:18 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 8/8] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 15:35:18 2020] GET /productions/ => generated 5170 bytes in 104 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 9/9] 122.115.232.155 () {52 vars in 1042 bytes} [Fri Aug 21 15:36:26 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 1433|app: 0|req: 10/10] 122.115.232.155 () {52 vars in 1084 bytes} [Fri Aug 21 15:36:26 2020] POST /login => generated 188 bytes in 36 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 11/11] 122.115.232.155 () {52 vars in 1066 bytes} [Fri Aug 21 15:36:29 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 12/12] 122.115.232.155 () {50 vars in 1152 bytes} [Fri Aug 21 15:36:29 2020] GET /productions/ => generated 5170 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 13/13] 122.115.232.155 () {52 vars in 1077 bytes} [Fri Aug 21 15:36:54 2020] OPTIONS /identifiers/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 14/14] 122.115.232.155 () {50 vars in 1163 bytes} [Fri Aug 21 15:36:54 2020] GET /identifiers/ => generated 4019 bytes in 91 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 15/15] 122.115.232.155 () {52 vars in 1066 bytes} [Fri Aug 21 15:37:06 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 16/16] 193.118.53.194 () {38 vars in 549 bytes} [Fri Aug 21 15:54:43 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 17/17] 122.115.232.155 () {52 vars in 826 bytes} [Fri Aug 21 16:06:55 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 1433|app: 0|req: 18/18] 122.115.232.155 () {50 vars in 841 bytes} [Fri Aug 21 16:06:55 2020] POST /login => generated 188 bytes in 36 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 19/19] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 16:06:56 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 20/20] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 16:06:56 2020] GET /productions/ => generated 5170 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 21/21] 122.115.232.155 () {48 vars in 938 bytes} [Fri Aug 21 16:07:00 2020] GET /productions/ => generated 5170 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 22/22] 122.115.232.155 () {52 vars in 876 bytes} [Fri Aug 21 16:07:02 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 23/23] 122.115.232.155 () {48 vars in 935 bytes} [Fri Aug 21 16:07:02 2020] GET /productions/ => generated 5170 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 24/24] 122.115.232.155 () {52 vars in 898 bytes} [Fri Aug 21 16:07:26 2020] OPTIONS /production_edit/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 308 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 25/25] 122.115.232.155 () {52 vars in 1056 bytes} [Fri Aug 21 16:07:27 2020] POST /production_edit/ => generated 23 bytes in 25 msecs (HTTP/1.1 200) 5 headers in 181 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 26/26] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 16:07:27 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 27/27] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 16:07:27 2020] GET /productions/ => generated 5153 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 28/28] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 16:07:30 2020] GET /productions/ => generated 5153 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+-- unavailable modifier requested: 3 --
+[pid: 1433|app: 0|req: 29/30] 122.115.232.155 () {52 vars in 826 bytes} [Fri Aug 21 16:40:47 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 1433|app: 0|req: 30/31] 122.115.232.155 () {50 vars in 841 bytes} [Fri Aug 21 16:40:47 2020] POST /login => generated 188 bytes in 36 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 31/32] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 16:40:47 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 32/33] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 16:40:47 2020] GET /productions/ => generated 5153 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 33/34] 171.101.217.245 () {36 vars in 530 bytes} [Fri Aug 21 16:43:31 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 34/35] 122.115.232.155 () {52 vars in 879 bytes} [Fri Aug 21 16:51:28 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 35/36] 122.115.232.155 () {48 vars in 938 bytes} [Fri Aug 21 16:51:28 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 36/37] 122.115.232.155 () {52 vars in 839 bytes} [Fri Aug 21 16:51:31 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 334 bytes (0 switches on core 0)
+[pid: 1433|app: 0|req: 37/38] 122.115.232.155 () {52 vars in 841 bytes} [Fri Aug 21 16:51:31 2020] OPTIONS /users/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 38/39] 122.115.232.155 () {48 vars in 898 bytes} [Fri Aug 21 16:51:31 2020] GET /login => generated 23 bytes in 2 msecs (HTTP/1.1 200) 5 headers in 173 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 39/40] 122.115.232.155 () {48 vars in 900 bytes} [Fri Aug 21 16:51:31 2020] GET /users/ => generated 1581 bytes in 18 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 40/41] 122.115.232.155 () {48 vars in 920 bytes} [Fri Aug 21 16:51:35 2020] GET /users/ => generated 1581 bytes in 17 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 41/42] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 16:51:37 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 42/43] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 16:51:37 2020] GET /productions/ => generated 5153 bytes in 97 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 43/44] 122.115.232.155 () {52 vars in 839 bytes} [Fri Aug 21 16:51:54 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 334 bytes (0 switches on core 0)
+[pid: 1433|app: 0|req: 44/45] 122.115.232.155 () {52 vars in 841 bytes} [Fri Aug 21 16:51:54 2020] OPTIONS /users/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 45/46] 122.115.232.155 () {48 vars in 898 bytes} [Fri Aug 21 16:51:54 2020] GET /login => generated 23 bytes in 2 msecs (HTTP/1.1 200) 5 headers in 173 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 46/47] 122.115.232.155 () {48 vars in 900 bytes} [Fri Aug 21 16:51:54 2020] GET /users/ => generated 1581 bytes in 18 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 47/48] 122.115.232.155 () {52 vars in 861 bytes} [Fri Aug 21 16:52:02 2020] OPTIONS /users/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 48/49] 122.115.232.155 () {48 vars in 920 bytes} [Fri Aug 21 16:52:02 2020] GET /users/ => generated 1581 bytes in 18 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 49/50] 122.115.232.155 () {52 vars in 840 bytes} [Fri Aug 21 17:06:10 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 334 bytes (0 switches on core 0)
+[pid: 1433|app: 0|req: 50/51] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 17:06:10 2020] OPTIONS /customers/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 51/52] 122.115.232.155 () {48 vars in 899 bytes} [Fri Aug 21 17:06:10 2020] GET /login => generated 23 bytes in 2 msecs (HTTP/1.1 200) 5 headers in 173 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 52/53] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 17:06:10 2020] GET /customers/ => generated 35389 bytes in 42 msecs (HTTP/1.1 200) 5 headers in 176 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 53/54] 122.115.232.155 () {48 vars in 898 bytes} [Fri Aug 21 17:06:13 2020] GET /login => generated 23 bytes in 2 msecs (HTTP/1.1 200) 5 headers in 173 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 54/55] 122.115.232.155 () {52 vars in 841 bytes} [Fri Aug 21 17:06:13 2020] OPTIONS /users/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 55/56] 122.115.232.155 () {48 vars in 900 bytes} [Fri Aug 21 17:06:13 2020] GET /users/ => generated 1581 bytes in 17 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 56/57] 122.115.232.155 () {48 vars in 920 bytes} [Fri Aug 21 17:06:16 2020] GET /users/ => generated 1581 bytes in 18 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 57/58] 122.115.232.155 () {52 vars in 840 bytes} [Fri Aug 21 17:06:18 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 334 bytes (0 switches on core 0)
+[pid: 1433|app: 0|req: 58/59] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 17:06:18 2020] OPTIONS /customers/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 59/60] 122.115.232.155 () {48 vars in 899 bytes} [Fri Aug 21 17:06:18 2020] GET /login => generated 23 bytes in 2 msecs (HTTP/1.1 200) 5 headers in 173 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 60/61] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 17:06:18 2020] GET /customers/ => generated 35389 bytes in 43 msecs (HTTP/1.1 200) 5 headers in 176 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 61/62] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 17:49:32 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 62/63] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 17:49:32 2020] GET /productions/ => generated 5153 bytes in 90 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 63/64] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 17:49:37 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 64/65] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 17:49:37 2020] GET /productions/ => generated 5153 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 65/66] 122.115.232.155 () {48 vars in 938 bytes} [Fri Aug 21 17:49:39 2020] GET /productions/ => generated 5153 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 66/67] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 17:49:42 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 67/68] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 17:49:42 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 68/69] 122.115.232.155 () {52 vars in 879 bytes} [Fri Aug 21 17:49:48 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 69/70] 122.115.232.155 () {48 vars in 938 bytes} [Fri Aug 21 17:49:48 2020] GET /productions/ => generated 5153 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 70/71] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 17:50:07 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 71/72] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 17:50:07 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 72/73] 122.115.232.155 () {52 vars in 840 bytes} [Fri Aug 21 17:50:10 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 334 bytes (0 switches on core 0)
+[pid: 1433|app: 0|req: 73/74] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 17:50:11 2020] OPTIONS /customers/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 74/75] 122.115.232.155 () {48 vars in 899 bytes} [Fri Aug 21 17:50:11 2020] GET /login => generated 23 bytes in 2 msecs (HTTP/1.1 200) 5 headers in 173 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 75/76] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 17:50:11 2020] GET /customers/ => generated 35389 bytes in 41 msecs (HTTP/1.1 200) 5 headers in 176 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 76/77] 122.115.232.155 () {52 vars in 871 bytes} [Fri Aug 21 17:50:16 2020] OPTIONS /customers/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 77/78] 122.115.232.155 () {48 vars in 930 bytes} [Fri Aug 21 17:50:16 2020] GET /customers/ => generated 35389 bytes in 41 msecs (HTTP/1.1 200) 5 headers in 176 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 78/79] 122.115.232.155 () {52 vars in 869 bytes} [Fri Aug 21 17:50:31 2020] OPTIONS /customers/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 79/80] 122.115.232.155 () {48 vars in 928 bytes} [Fri Aug 21 17:50:31 2020] GET /customers/ => generated 35389 bytes in 42 msecs (HTTP/1.1 200) 5 headers in 176 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 80/81] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 17:50:36 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 81/82] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 17:50:36 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 82/83] 122.115.232.155 () {48 vars in 938 bytes} [Fri Aug 21 17:50:38 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 83/84] 122.115.232.155 () {52 vars in 876 bytes} [Fri Aug 21 17:50:42 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 84/85] 122.115.232.155 () {48 vars in 935 bytes} [Fri Aug 21 17:50:43 2020] GET /productions/ => generated 5153 bytes in 90 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 85/86] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 17:50:57 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 86/87] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 17:50:57 2020] GET /productions/ => generated 5153 bytes in 107 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 87/88] 122.115.232.155 () {52 vars in 850 bytes} [Fri Aug 21 17:51:12 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 88/89] 122.115.232.155 () {48 vars in 909 bytes} [Fri Aug 21 17:51:12 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 1433|app: 0|req: 89/90] 192.241.235.244 () {38 vars in 490 bytes} [Fri Aug 21 19:09:30 2020] GET /manager/text/list => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 90/91] 91.126.46.174 () {36 vars in 521 bytes} [Fri Aug 21 20:43:24 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 91/92] 78.189.230.232 () {36 vars in 523 bytes} [Fri Aug 21 20:57:56 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+-- unavailable modifier requested: 3 --
+[pid: 1433|app: 0|req: 92/94] 162.243.129.109 () {38 vars in 480 bytes} [Fri Aug 21 21:27:23 2020] GET /manager/html => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+-- unavailable modifier requested: 3 --
+-- unavailable modifier requested: 4 --
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Resource temporarily unavailable [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Resource temporarily unavailable [proto/uwsgi.c line 40]
+[pid: 1433|app: 0|req: 93/97] 123.194.117.96 () {36 vars in 523 bytes} [Sat Aug 22 01:40:22 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+[pid: 1433|app: 0|req: 94/98] 47.105.42.153 () {34 vars in 419 bytes} [Sat Aug 22 02:09:11 2020] GET /phpmyAdmin/ => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 95/99] 47.105.42.153 () {32 vars in 390 bytes} [Sat Aug 22 02:09:18 2020] GET /phpmyAdmin/ => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+[pid: 1433|app: 0|req: 96/100] 47.105.42.153 () {32 vars in 376 bytes} [Sat Aug 22 02:09:22 2020] GET /pmD/ => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 97/101] 47.105.42.153 () {32 vars in 376 bytes} [Sat Aug 22 02:09:29 2020] GET /pmD/ => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+[pid: 1433|app: 0|req: 98/102] 47.105.42.153 () {32 vars in 376 bytes} [Sat Aug 22 02:09:33 2020] GET /pmA/ => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 99/103] 47.105.42.153 () {32 vars in 376 bytes} [Sat Aug 22 02:09:40 2020] GET /pmA/ => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+[pid: 1433|app: 0|req: 100/104] 47.105.42.153 () {32 vars in 400 bytes} [Sat Aug 22 02:09:44 2020] GET /phpmyAdmin4.8.5/ => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 1433|app: 0|req: 101/105] 47.105.42.153 () {32 vars in 400 bytes} [Sat Aug 22 02:09:51 2020] GET /phpmyAdmin4.8.5/ => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+[pid: 1433|app: 0|req: 102/106] 220.132.126.166 () {36 vars in 524 bytes} [Sat Aug 22 02:16:40 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+uwsgi_proto_uwsgi_parser(): Connection reset by peer [proto/uwsgi.c line 35]
+uwsgi_proto_uwsgi_parser(): Connection reset by peer [proto/uwsgi.c line 35]
+[pid: 1433|app: 0|req: 103/107] 83.97.20.33 () {30 vars in 340 bytes} [Sat Aug 22 06:17:28 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.0 404) 2 headers in 72 bytes (1 switches on core 0)
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Connection reset by peer [proto/uwsgi.c line 35]
+uwsgi_proto_uwsgi_parser(): Connection reset by peer [proto/uwsgi.c line 35]
+[pid: 1433|app: 0|req: 104/108] 209.17.96.2 () {34 vars in 466 bytes} [Sat Aug 22 10:06:45 2020] GET / => generated 233 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+-- unavailable modifier requested: 3 --
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+[pid: 1433|app: 0|req: 105/110] 101.251.238.57 () {42 vars in 654 bytes} [Sat Aug 22 15:46:03 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+...brutally killing workers...
+Gracefully killing worker 1 (pid: 1433)...
+worker 1 buried after 0 seconds
+binary reloading uWSGI...
+chdir() to /home/ubuntu
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:8080)
+running /usr/local/bin/uwsgi
+[uWSGI] getting INI configuration from /home/ubuntu/pixellot/server/uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Sat Aug 22 16:00:01 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x55d9b0eed2e0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55d9b0eed2e0 pid: 1426 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1426)
+spawned uWSGI worker 1 (pid: 9614, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Aug 24 00:41:14 2020] ***
+compiled with version: 7.4.0 on 08 February 2020 11:29:53
+os: Linux-5.3.0-1033-aws #35-Ubuntu SMP Wed Aug 5 15:47:17 UTC 2020
+nodename: ip-192-168-100-85
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 2
+current working directory: /home/ubuntu
+writing pidfile to uwsgi.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ubuntu/pixellot
+your processes number limit is 15622
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8080 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.9 (default, Jul 17 2020, 12:50:27)  [GCC 8.4.0]
+Set PythonHome to /home/ubuntu/Envs/pixellot
+Python main interpreter initialized at 0x5573685fe420
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 268718 bytes (262 KB) for 1 cores
+*** Operational MODE: single process ***
+added /home/ubuntu/pixellot/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5573685fe420 pid: 2071 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2071)
+spawned uWSGI worker 1 (pid: 2078, cores: 1)
+*** Stats server enabled on 127.0.0.1:9191 fd: 9 ***
+[pid: 2078|app: 0|req: 1/1] 111.197.21.248 () {46 vars in 822 bytes} [Mon Aug 24 00:41:19 2020] GET /login => generated 23 bytes in 122 msecs (HTTP/1.1 200) 2 headers in 71 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 2/2] 111.197.21.248 () {48 vars in 778 bytes} [Mon Aug 24 00:41:19 2020] GET /favicon.ico => generated 233 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 2078|app: 0|req: 3/3] 111.197.21.248 () {52 vars in 825 bytes} [Mon Aug 24 00:41:31 2020] OPTIONS /login => generated 0 bytes in 1 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 2078|app: 0|req: 4/4] 111.197.21.248 () {50 vars in 840 bytes} [Mon Aug 24 00:41:31 2020] POST /login => generated 188 bytes in 38 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 5/5] 111.197.21.248 () {52 vars in 849 bytes} [Mon Aug 24 00:41:32 2020] OPTIONS /productions/ => generated 23 bytes in 1 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 6/6] 111.197.21.248 () {48 vars in 908 bytes} [Mon Aug 24 00:41:32 2020] GET /productions/ => generated 5153 bytes in 104 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 7/7] 111.197.21.248 () {52 vars in 834 bytes} [Mon Aug 24 00:41:36 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 334 bytes (0 switches on core 0)
+[pid: 2078|app: 0|req: 8/8] 111.197.21.248 () {48 vars in 893 bytes} [Mon Aug 24 00:41:36 2020] GET /login => generated 23 bytes in 2 msecs (HTTP/1.1 200) 5 headers in 173 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 9/9] 111.197.21.248 () {52 vars in 854 bytes} [Mon Aug 24 00:41:36 2020] OPTIONS /change_records/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 10/10] 111.197.21.248 () {48 vars in 913 bytes} [Mon Aug 24 00:41:36 2020] GET /change_records/ => generated 3446 bytes in 33 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 11/11] 111.197.21.248 () {52 vars in 849 bytes} [Mon Aug 24 00:41:42 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 12/12] 111.197.21.248 () {48 vars in 908 bytes} [Mon Aug 24 00:41:42 2020] GET /productions/ => generated 5153 bytes in 90 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 13/13] 111.197.21.248 () {52 vars in 849 bytes} [Mon Aug 24 00:45:52 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 14/14] 111.197.21.248 () {48 vars in 908 bytes} [Mon Aug 24 00:45:52 2020] GET /productions/ => generated 5153 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 15/15] 111.197.21.248 () {52 vars in 849 bytes} [Mon Aug 24 00:48:09 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 16/16] 111.197.21.248 () {48 vars in 908 bytes} [Mon Aug 24 00:48:09 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 17/17] 79.12.54.96 () {36 vars in 520 bytes} [Mon Aug 24 02:28:41 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 2078|app: 0|req: 18/18] 111.197.21.248 () {52 vars in 1041 bytes} [Mon Aug 24 02:41:03 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 2078|app: 0|req: 19/19] 111.197.21.248 () {52 vars in 1083 bytes} [Mon Aug 24 02:41:03 2020] POST /login => generated 188 bytes in 36 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 20/20] 111.197.21.248 () {52 vars in 1065 bytes} [Mon Aug 24 02:41:05 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 21/21] 111.197.21.248 () {50 vars in 1151 bytes} [Mon Aug 24 02:41:05 2020] GET /productions/ => generated 5153 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+[pid: 2078|app: 0|req: 22/22] 89.116.174.223 () {36 vars in 522 bytes} [Mon Aug 24 04:23:23 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+uwsgi_proto_uwsgi_parser(): Success [proto/uwsgi.c line 40]
+[pid: 2078|app: 0|req: 23/23] 172.104.67.101 () {36 vars in 461 bytes} [Mon Aug 24 06:55:36 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 2078|app: 0|req: 24/24] 122.115.232.155 () {52 vars in 826 bytes} [Mon Aug 24 09:05:37 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 2078|app: 0|req: 25/25] 122.115.232.155 () {50 vars in 841 bytes} [Mon Aug 24 09:05:37 2020] POST /login => generated 188 bytes in 36 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 26/26] 122.115.232.155 () {52 vars in 850 bytes} [Mon Aug 24 09:05:37 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 27/27] 122.115.232.155 () {48 vars in 909 bytes} [Mon Aug 24 09:05:37 2020] GET /productions/ => generated 5153 bytes in 89 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 28/28] 122.115.232.155 () {52 vars in 826 bytes} [Mon Aug 24 09:11:50 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 2078|app: 0|req: 29/29] 122.115.232.155 () {50 vars in 841 bytes} [Mon Aug 24 09:11:50 2020] POST /login => generated 188 bytes in 37 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 30/30] 122.115.232.155 () {52 vars in 850 bytes} [Mon Aug 24 09:11:50 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 31/31] 122.115.232.155 () {48 vars in 909 bytes} [Mon Aug 24 09:11:50 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 32/32] 122.115.232.155 () {52 vars in 836 bytes} [Mon Aug 24 09:12:00 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 2078|app: 0|req: 33/33] 122.115.232.155 () {50 vars in 851 bytes} [Mon Aug 24 09:12:00 2020] POST /login => generated 188 bytes in 36 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 34/34] 122.115.232.155 () {52 vars in 850 bytes} [Mon Aug 24 09:12:00 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 35/35] 122.115.232.155 () {48 vars in 909 bytes} [Mon Aug 24 09:12:00 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 36/36] 223.71.167.163 () {38 vars in 517 bytes} [Mon Aug 24 10:34:53 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 2078|app: 0|req: 37/37] 122.115.232.155 () {52 vars in 826 bytes} [Mon Aug 24 11:27:57 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 2078|app: 0|req: 38/38] 122.115.232.155 () {50 vars in 841 bytes} [Mon Aug 24 11:27:57 2020] POST /login => generated 188 bytes in 36 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 39/39] 122.115.232.155 () {52 vars in 850 bytes} [Mon Aug 24 11:27:58 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 40/40] 122.115.232.155 () {48 vars in 909 bytes} [Mon Aug 24 11:27:58 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 41/41] 209.17.96.178 () {34 vars in 468 bytes} [Mon Aug 24 12:17:16 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 2078|app: 0|req: 42/42] 122.115.232.155 () {52 vars in 826 bytes} [Mon Aug 24 14:17:50 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 2078|app: 0|req: 43/43] 122.115.232.155 () {50 vars in 841 bytes} [Mon Aug 24 14:17:50 2020] POST /login => generated 188 bytes in 36 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 44/44] 122.115.232.155 () {52 vars in 850 bytes} [Mon Aug 24 14:17:51 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 45/45] 122.115.232.155 () {48 vars in 909 bytes} [Mon Aug 24 14:17:51 2020] GET /productions/ => generated 5153 bytes in 91 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 46/46] 122.115.232.155 () {52 vars in 826 bytes} [Mon Aug 24 14:35:57 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 2078|app: 0|req: 47/47] 122.115.232.155 () {50 vars in 841 bytes} [Mon Aug 24 14:35:57 2020] POST /login => generated 188 bytes in 36 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 48/48] 122.115.232.155 () {52 vars in 850 bytes} [Mon Aug 24 14:35:57 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 49/49] 122.115.232.155 () {48 vars in 909 bytes} [Mon Aug 24 14:35:57 2020] GET /productions/ => generated 5153 bytes in 91 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 50/50] 122.115.232.155 () {52 vars in 826 bytes} [Mon Aug 24 14:39:30 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 333 bytes (0 switches on core 0)
+[pid: 2078|app: 0|req: 51/51] 122.115.232.155 () {50 vars in 841 bytes} [Mon Aug 24 14:39:30 2020] POST /login => generated 188 bytes in 36 msecs (HTTP/1.1 200) 5 headers in 174 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 52/52] 122.115.232.155 () {52 vars in 850 bytes} [Mon Aug 24 14:39:30 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 53/53] 122.115.232.155 () {48 vars in 909 bytes} [Mon Aug 24 14:39:30 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 54/54] 85.204.223.107 () {36 vars in 529 bytes} [Mon Aug 24 14:39:55 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 2078|app: 0|req: 55/55] 122.115.232.155 () {52 vars in 879 bytes} [Mon Aug 24 14:40:14 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 56/56] 122.115.232.155 () {48 vars in 938 bytes} [Mon Aug 24 14:40:14 2020] GET /productions/ => generated 5153 bytes in 91 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 57/57] 122.115.232.155 () {48 vars in 935 bytes} [Mon Aug 24 14:40:17 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 58/58] 122.115.232.155 () {52 vars in 850 bytes} [Mon Aug 24 14:40:39 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 59/59] 122.115.232.155 () {48 vars in 909 bytes} [Mon Aug 24 14:40:39 2020] GET /productions/ => generated 5153 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 60/60] 122.115.232.155 () {48 vars in 938 bytes} [Mon Aug 24 14:40:43 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 61/61] 122.115.232.155 () {52 vars in 876 bytes} [Mon Aug 24 14:40:55 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 62/62] 122.115.232.155 () {48 vars in 935 bytes} [Mon Aug 24 14:40:55 2020] GET /productions/ => generated 5153 bytes in 91 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 63/63] 122.115.232.155 () {52 vars in 850 bytes} [Mon Aug 24 14:41:06 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 64/64] 122.115.232.155 () {48 vars in 909 bytes} [Mon Aug 24 14:41:06 2020] GET /productions/ => generated 5153 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 65/65] 122.115.232.155 () {52 vars in 861 bytes} [Mon Aug 24 14:41:11 2020] OPTIONS /identifiers/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 66/66] 122.115.232.155 () {48 vars in 920 bytes} [Mon Aug 24 14:41:11 2020] GET /identifiers/ => generated 4019 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 67/67] 122.115.232.155 () {48 vars in 943 bytes} [Mon Aug 24 14:41:13 2020] GET /identifiers/ => generated 4019 bytes in 89 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 68/68] 122.115.232.155 () {52 vars in 850 bytes} [Mon Aug 24 14:41:24 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 69/69] 122.115.232.155 () {48 vars in 909 bytes} [Mon Aug 24 14:41:24 2020] GET /productions/ => generated 5153 bytes in 91 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 70/70] 122.115.232.155 () {48 vars in 909 bytes} [Mon Aug 24 14:41:28 2020] GET /productions/ => generated 5153 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 71/71] 122.115.232.155 () {52 vars in 879 bytes} [Mon Aug 24 14:41:30 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 72/72] 122.115.232.155 () {48 vars in 938 bytes} [Mon Aug 24 14:41:30 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 73/73] 122.115.232.155 () {52 vars in 850 bytes} [Mon Aug 24 14:41:37 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 74/74] 122.115.232.155 () {48 vars in 909 bytes} [Mon Aug 24 14:41:37 2020] GET /productions/ => generated 5153 bytes in 91 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 75/75] 122.115.232.155 () {52 vars in 879 bytes} [Mon Aug 24 14:41:57 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 294 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 76/76] 122.115.232.155 () {48 vars in 938 bytes} [Mon Aug 24 14:41:57 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 77/77] 122.115.232.155 () {48 vars in 935 bytes} [Mon Aug 24 14:42:00 2020] GET /productions/ => generated 5153 bytes in 96 msecs (HTTP/1.1 200) 5 headers in 175 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 78/78] 122.115.232.155 () {52 vars in 871 bytes} [Mon Aug 24 14:45:56 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 79/79] 122.115.232.155 () {48 vars in 812 bytes} [Mon Aug 24 14:45:56 2020] GET /productions/ => generated 19 bytes in 2 msecs (HTTP/1.1 401) 6 headers in 255 bytes (1 switches on core 0)
+[pid: 2078|app: 0|req: 80/80] 122.115.232.155 () {52 vars in 857 bytes} [Mon Aug 24 14:46:05 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 337 bytes (0 switches on core 0)
+[pid: 2078|app: 0|req: 81/81] 122.115.232.155 () {50 vars in 872 bytes} [Mon Aug 24 14:46:05 2020] POST /login => generated 188 bytes in 37 msecs (HTTP/1.1 200) 5 headers in 178 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 82/82] 122.115.232.155 () {52 vars in 871 bytes} [Mon Aug 24 14:46:05 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 83/83] 122.115.232.155 () {48 vars in 930 bytes} [Mon Aug 24 14:46:05 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 84/84] 122.115.232.155 () {52 vars in 871 bytes} [Mon Aug 24 14:48:43 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 85/85] 122.115.232.155 () {48 vars in 930 bytes} [Mon Aug 24 14:48:43 2020] GET /productions/ => generated 5153 bytes in 96 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 86/86] 122.115.232.155 () {48 vars in 959 bytes} [Mon Aug 24 14:48:45 2020] GET /productions/ => generated 5153 bytes in 98 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 87/87] 211.172.4.167 () {36 vars in 521 bytes} [Mon Aug 24 14:48:47 2020] GET / => generated 233 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 2078|app: 0|req: 88/88] 122.115.232.155 () {52 vars in 900 bytes} [Mon Aug 24 14:49:53 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 89/89] 122.115.232.155 () {48 vars in 959 bytes} [Mon Aug 24 14:49:53 2020] GET /productions/ => generated 5153 bytes in 97 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 90/90] 122.115.232.155 () {48 vars in 959 bytes} [Mon Aug 24 14:49:57 2020] GET /productions/ => generated 5153 bytes in 114 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 91/91] 122.115.232.155 () {52 vars in 900 bytes} [Mon Aug 24 14:50:13 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 92/92] 122.115.232.155 () {48 vars in 959 bytes} [Mon Aug 24 14:50:13 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 93/93] 122.115.232.155 () {48 vars in 959 bytes} [Mon Aug 24 14:50:14 2020] GET /productions/ => generated 5153 bytes in 90 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 94/94] 122.115.232.155 () {52 vars in 900 bytes} [Mon Aug 24 14:50:32 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 95/95] 122.115.232.155 () {48 vars in 959 bytes} [Mon Aug 24 14:50:32 2020] GET /productions/ => generated 5153 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 96/96] 122.115.232.155 () {52 vars in 900 bytes} [Mon Aug 24 14:51:21 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 97/97] 122.115.232.155 () {48 vars in 959 bytes} [Mon Aug 24 14:51:21 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 98/98] 122.115.232.155 () {48 vars in 959 bytes} [Mon Aug 24 14:51:23 2020] GET /productions/ => generated 5153 bytes in 91 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 99/99] 122.115.232.155 () {52 vars in 900 bytes} [Mon Aug 24 14:51:47 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 100/100] 122.115.232.155 () {48 vars in 959 bytes} [Mon Aug 24 14:51:47 2020] GET /productions/ => generated 5153 bytes in 90 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 101/101] 122.115.232.155 () {48 vars in 959 bytes} [Mon Aug 24 14:51:51 2020] GET /productions/ => generated 5153 bytes in 91 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 102/102] 122.115.232.155 () {52 vars in 900 bytes} [Mon Aug 24 14:51:53 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 103/103] 122.115.232.155 () {48 vars in 959 bytes} [Mon Aug 24 14:51:53 2020] GET /productions/ => generated 5153 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 104/104] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:51:55 2020] GET /productions/ => generated 5153 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 105/105] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 14:52:02 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 106/106] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:52:02 2020] GET /productions/ => generated 5153 bytes in 99 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 107/107] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 14:52:20 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 108/108] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:52:20 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 109/109] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:52:25 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 110/110] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 14:52:32 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 111/111] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:52:32 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 112/112] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:52:35 2020] GET /productions/ => generated 5153 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 113/113] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 14:53:52 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 114/114] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:53:52 2020] GET /productions/ => generated 5153 bytes in 100 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 115/115] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 14:54:03 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 116/116] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:54:03 2020] GET /productions/ => generated 5153 bytes in 96 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 117/117] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 14:54:13 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 118/118] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:54:13 2020] GET /productions/ => generated 5153 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 119/119] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:54:18 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 120/120] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 14:54:38 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 121/121] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:54:38 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 122/122] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:54:42 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 123/123] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 14:54:47 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 124/124] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:54:47 2020] GET /productions/ => generated 5153 bytes in 91 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 125/125] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 14:55:34 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 126/126] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:55:34 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 127/127] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 14:55:41 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 128/128] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:55:41 2020] GET /productions/ => generated 5153 bytes in 96 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 129/129] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 14:56:00 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 130/130] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:56:00 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 131/131] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:56:04 2020] GET /productions/ => generated 5153 bytes in 99 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 132/132] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 14:56:19 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 133/133] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:56:19 2020] GET /productions/ => generated 5153 bytes in 90 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 134/134] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 14:57:17 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 135/135] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:57:17 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 136/136] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:57:20 2020] GET /productions/ => generated 5153 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 137/137] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 14:57:56 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 138/138] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:57:56 2020] GET /productions/ => generated 5153 bytes in 97 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 139/139] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 14:58:02 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 140/140] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:58:02 2020] GET /productions/ => generated 5153 bytes in 100 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 141/141] 122.115.232.155 () {52 vars in 871 bytes} [Mon Aug 24 14:58:19 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 142/142] 122.115.232.155 () {48 vars in 930 bytes} [Mon Aug 24 14:58:19 2020] GET /productions/ => generated 5153 bytes in 91 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 143/143] 122.115.232.155 () {48 vars in 959 bytes} [Mon Aug 24 14:58:22 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 144/144] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 14:58:25 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 145/145] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 14:58:25 2020] GET /productions/ => generated 5153 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 146/146] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:00:26 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 147/147] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:00:26 2020] GET /productions/ => generated 5153 bytes in 90 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 148/148] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:01:21 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 149/149] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:01:21 2020] GET /productions/ => generated 5153 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 150/150] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:01:24 2020] GET /productions/ => generated 5153 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 151/151] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:01:53 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 152/152] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:01:53 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 153/153] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:01:57 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 154/154] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:02:27 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 155/155] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:02:27 2020] GET /productions/ => generated 5153 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 156/156] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:02:30 2020] GET /productions/ => generated 5153 bytes in 96 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 157/157] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:02:46 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 158/158] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:02:46 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 159/159] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:03:18 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 160/160] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:03:18 2020] GET /productions/ => generated 5153 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 161/161] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:03:26 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 162/162] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:03:26 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 163/163] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:03:38 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 164/164] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:03:38 2020] GET /productions/ => generated 5153 bytes in 91 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 165/165] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:03:47 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 166/166] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:03:47 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 167/167] 122.115.232.155 () {52 vars in 871 bytes} [Mon Aug 24 15:04:05 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 168/168] 122.115.232.155 () {48 vars in 930 bytes} [Mon Aug 24 15:04:05 2020] GET /productions/ => generated 5153 bytes in 97 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 169/169] 122.115.232.155 () {52 vars in 900 bytes} [Mon Aug 24 15:04:12 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 170/170] 122.115.232.155 () {48 vars in 959 bytes} [Mon Aug 24 15:04:12 2020] GET /productions/ => generated 5153 bytes in 99 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 171/171] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:04:13 2020] GET /productions/ => generated 5153 bytes in 105 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 172/172] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:04:41 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 173/173] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:04:41 2020] GET /productions/ => generated 5153 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 174/174] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:04:59 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 175/175] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:04:59 2020] GET /productions/ => generated 5153 bytes in 93 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 176/176] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:05:05 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 177/177] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:05:05 2020] GET /productions/ => generated 5153 bytes in 100 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 178/178] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:07:24 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 179/179] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:07:24 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 180/180] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:07:49 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 181/181] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:07:49 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 182/182] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:08:08 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 183/183] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:08:09 2020] GET /productions/ => generated 5153 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 184/184] 122.115.232.155 () {52 vars in 881 bytes} [Mon Aug 24 15:12:56 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 185/185] 122.115.232.155 () {48 vars in 940 bytes} [Mon Aug 24 15:12:56 2020] GET /productions/ => generated 5153 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 186/186] 122.115.232.155 () {48 vars in 930 bytes} [Mon Aug 24 15:13:01 2020] GET /productions/ => generated 5153 bytes in 103 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 187/187] 122.115.232.155 () {52 vars in 900 bytes} [Mon Aug 24 15:13:03 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 188/188] 122.115.232.155 () {48 vars in 959 bytes} [Mon Aug 24 15:13:03 2020] GET /productions/ => generated 5153 bytes in 120 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 189/189] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:13:05 2020] GET /productions/ => generated 5153 bytes in 102 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 190/190] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:13:16 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 191/191] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:14:23 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 192/192] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:14:23 2020] GET /productions/ => generated 5153 bytes in 100 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 193/193] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:14:27 2020] GET /productions/ => generated 5153 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 194/194] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:14:37 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 195/195] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:14:37 2020] GET /productions/ => generated 5153 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 196/196] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:15:38 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 197/197] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:15:38 2020] GET /productions/ => generated 5153 bytes in 101 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 198/198] 122.115.232.155 () {52 vars in 871 bytes} [Mon Aug 24 15:15:45 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 199/199] 122.115.232.155 () {48 vars in 930 bytes} [Mon Aug 24 15:15:45 2020] GET /productions/ => generated 5153 bytes in 92 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 200/200] 122.115.232.155 () {48 vars in 959 bytes} [Mon Aug 24 15:15:47 2020] GET /productions/ => generated 5153 bytes in 97 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 201/201] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:15:50 2020] GET /productions/ => generated 5153 bytes in 94 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 202/202] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:17:12 2020] OPTIONS /productions/ => generated 23 bytes in 1 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 203/203] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:17:12 2020] GET /productions/ => generated 5153 bytes in 97 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 204/204] 122.115.232.155 () {52 vars in 871 bytes} [Mon Aug 24 15:17:56 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 205/205] 122.115.232.155 () {48 vars in 930 bytes} [Mon Aug 24 15:17:56 2020] GET /productions/ => generated 5153 bytes in 98 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 206/206] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:17:58 2020] GET /productions/ => generated 5153 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 207/207] 122.115.232.155 () {48 vars in 959 bytes} [Mon Aug 24 15:17:59 2020] GET /productions/ => generated 5153 bytes in 100 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 208/208] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:18:03 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 209/209] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:18:03 2020] GET /productions/ => generated 5153 bytes in 98 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 210/210] 122.115.232.155 () {48 vars in 930 bytes} [Mon Aug 24 15:18:05 2020] GET /productions/ => generated 5153 bytes in 100 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 211/211] 122.115.232.155 () {48 vars in 959 bytes} [Mon Aug 24 15:18:06 2020] GET /productions/ => generated 5153 bytes in 98 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 212/212] 122.115.232.155 () {52 vars in 897 bytes} [Mon Aug 24 15:18:08 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 213/213] 122.115.232.155 () {48 vars in 956 bytes} [Mon Aug 24 15:18:08 2020] GET /productions/ => generated 5153 bytes in 97 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 214/214] 122.115.232.155 () {52 vars in 861 bytes} [Mon Aug 24 15:18:12 2020] OPTIONS /login => generated 0 bytes in 0 msecs (HTTP/1.1 200) 8 headers in 338 bytes (0 switches on core 0)
+[pid: 2078|app: 0|req: 215/215] 122.115.232.155 () {52 vars in 871 bytes} [Mon Aug 24 15:18:12 2020] OPTIONS /customers/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 216/216] 122.115.232.155 () {48 vars in 920 bytes} [Mon Aug 24 15:18:12 2020] GET /login => generated 23 bytes in 2 msecs (HTTP/1.1 200) 5 headers in 177 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 217/217] 122.115.232.155 () {48 vars in 930 bytes} [Mon Aug 24 15:18:12 2020] GET /customers/ => generated 35389 bytes in 43 msecs (HTTP/1.1 200) 5 headers in 180 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 218/218] 122.115.232.155 () {48 vars in 951 bytes} [Mon Aug 24 15:18:13 2020] GET /customers/ => generated 35389 bytes in 42 msecs (HTTP/1.1 200) 5 headers in 180 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 219/219] 122.115.232.155 () {48 vars in 949 bytes} [Mon Aug 24 15:18:14 2020] GET /customers/ => generated 35389 bytes in 42 msecs (HTTP/1.1 200) 5 headers in 180 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 220/220] 122.115.232.155 () {52 vars in 871 bytes} [Mon Aug 24 15:33:57 2020] OPTIONS /productions/ => generated 23 bytes in 0 msecs (HTTP/1.1 200) 7 headers in 298 bytes (2 switches on core 0)
+[pid: 2078|app: 0|req: 221/221] 122.115.232.155 () {48 vars in 930 bytes} [Mon Aug 24 15:33:57 2020] GET /productions/ => generated 5153 bytes in 95 msecs (HTTP/1.1 200) 5 headers in 179 bytes (2 switches on core 0)

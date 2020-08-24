@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="zh">
+
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>客户信息新增</title>
+
+		<!-- Template CSS -->
+		<link rel="stylesheet" href="assets/css/style-starter.css">
+
+		<!-- google fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap" rel="stylesheet">
+
+		<script src="./assets/js/axios.min.js"></script>
+		<script src="./assets/js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+
+	<body class="sidebar-menu-collapsed">
+		<div class="se-pre-con"></div>
+		<section>
+			<!-- sidebar menu start -->
+			<div class="sidebar-menu sticky-sidebar-menu">
+
+				<!-- logo start -->
+				<div class="logo">
+					<h1><a href="index.html">Pixellot</a></h1>
+				</div>
+
+				<!-- if logo is image enable this -->
+				<!-- image logo --
+    <div class="logo">
+      <a href="index.html">
+        <img src="image-path" alt="Your logo" title="Your logo" class="img-fluid" style="height:35px;" />
+      </a>
+    </div>
+    <!-- //image logo -->
+
+				<div class="logo-icon text-center">
+					<a href="index.html" title="logo"><img src="assets/images/logo.png" alt="logo-icon"> </a>
+				</div>
+				<!-- //logo end -->
+
+				<div class="sidebar-menu-inner">
+
+					<!-- sidebar nav start -->
+					<ul class="nav nav-pills nav-stacked custom-nav">
+						<li class="menu-list">
+							<a href="#"><i class="fa fa-cube"></i>
+								<span>产品 <i class="lnr lnr-chevron-right"></i></span></a>
+							<ul class="sub-menu-list">
+								<li><a href="index.html">产品列表</a> </li>
+								<li><a href="product_type.html">产品类型</a> </li>
+							</ul>
+						</li>
+						<li class="menu-list">
+							<a href="#"><i class="fa fa-clone"></i>
+								<span>组件 <i class="lnr lnr-chevron-right"></i></span></a>
+							<ul class="sub-menu-list">
+								<li><a href="identifiers.html">组件列表</a> </li>
+								<li><a href="identifier_names.html">组件名称</a> </li>
+
+
+								<li><a href="identifier_type.html">组件类别</a> </li>
+							</ul>
+						</li>
+						<li><a href="customers.html"><i class="fa fa-address-card-o"></i> <span>客户</span></a></li>
+						<li><a href="accounts.html"><i class="fa fa-user-o"></i> <span>账号</span></a></li>
+						<li><a href="logs.html"><i class="fa fa-file-text"></i> <span>日志</span></a></li>
+					</ul>
+					<!-- //sidebar nav end -->
+					<!-- toggle button start -->
+					<a class="toggle-btn">
+						<i class="fa fa-angle-double-left menu-collapsed__left"><span>折叠....</span></i>
+						<i class="fa fa-angle-double-right menu-collapsed__right"></i>
+					</a>
+					<!-- //toggle button end -->
+				</div>
+			</div>
+			<!-- //sidebar menu end -->
+			<!-- header-starts -->
+			<div class="header sticky-header">
+
+				<!-- notification menu start -->
+				<div class="menu-right">
+					<div class="navbar user-panel-top">
+						<!------搜索框-----
+					<div class="search-box">
+							<form action="#search-results.html" method="get">
+								<input class="search-input" placeholder="Search Here..." type="search" id="search">
+								<button class="search-submit" value=""><span class="fa fa-search"></span></button>
+							</form>
+						</div>
+
+						----->
+
+
+						<div class="user-dropdown-details d-flex" id="log">
+							<div class="profile_details" v-if="username !== null">
+								<ul>
+									<li class="dropdown profile_details_drop">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu3" aria-haspopup="true"
+										 aria-expanded="false">
+											<div>
+												<i class="fa fa-user-secret fa-2x"></i>
+											</div>
+										</a>
+										<ul class="dropdown-menu drp-mnu" aria-labelledby="dropdownMenu3">
+											<li class="user-info">
+												<h5 class="user-name">{{ username }}</h5>
+												<span class="status ml-2">管理员</span>
+											</li>
+											<li> <a href="account_add.html"><i class="lnr lnr-user"></i>新增账号</a> </li>
+											<li> <a href="account_edit.html"><i class="lnr lnr-users"></i>修改账号</a> </li>
+											<li class="logout" @click="logout"> <a href="index.html"><i class="fa fa-power-off"></i> 退出登录</a> </li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="profile_details" v-else>
+								<ul>
+									<li class="dropdown profile_details_drop">
+										<a href="login.html"><i class="fa fa-laptop"> {{ username }}登录</i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<script type="text/javascript">
+							var app = new Vue({
+								el: "#log",
+								data: {
+									username: localStorage.getItem('username')
+								}
+							})
+						</script>
+					</div>
+				</div>
+				<!--notification menu end -->
+			</div>
+			<!-- //header-ends -->
+
+			<!-- main content start -->
+			<div class="main-content">
+				<!-- content -->
+				<div class="container-fluid content-top-gap">
+
+					<!-- breadcrumbs -->
+					<nav aria-label="breadcrumb" class="mb-4">
+						<ol class="breadcrumb my-breadcrumb">
+							<li class="breadcrumb-item"><a href="index.html">首页</a></li>
+							<li class="breadcrumb-item"><a href="customers.html">客户</a></li>
+							<li class="breadcrumb-item active" aria-current="page">客户信息新增</li>
+						</ol>
+					</nav>
+					<!-- //breadcrumbs -->
+					<!-- forms -->
+					<section class="forms">
+						<!-- forms 2 -->
+						<div class="card card_border py-2 mb-4">
+							<div class="cards__heading">
+								<h3>客户信息新增 <span></span></h3>
+							</div>
+							<div class="card-body">
+								<form action="#" method="post">
+									<div class="form-row" id='production_details'>
+										<div class="form-group col-md-12">
+											<label for="inputEmail4" class="input__label">客户名称</label>
+											<input type="text" class="form-control" id="addnumber" v-model='item.customer_name' placeholder="产品名称">
+										</div>
+										<div class="form-group col-md-12">
+											<label for="inputEmail4" class="input__label">联系人</label>
+											<input type="text" class="form-control" id="addnumber" v-model='item.contact' placeholder="产品名称">
+										</div>
+										<div class="form-group col-md-12">
+											<label for="inputEmail4" class="input__label">联系方式</label>
+											<input type="text" class="form-control" id="addnumber" v-model='item.phone' placeholder="产品名称">
+										</div>
+										<div class="form-group col-md-12">
+											<label for="inputEmail4" class="input__label">所在地址</label>
+
+											<select class="col-md-2 form-control" v-model="item.f_adress" style="-webkit-appearance: none;">
+												<option v-for="first in first_adress" v-bind:value="first">{{ first.name }}</option>
+											</select>
+											<select class="col-md-2 form-control" v-model="item.adress" style="-webkit-appearance: none;">
+												<option v-for="second in second_adress" v-bind:value="second" v-if="(second.adcode<(item.f_adress.adcode + 10000)) && (second.adcode>=item.f_adress.adcode)">
+													{{ second.name }}
+												</option>
+											</select>
+										</div>
+										<div class="form-group col-md-12">
+											<label for="inputEmail4" class="input__label">购买产品</label>
+											<div v-if="all_productions[0]" style="display: inline;">
+												<input type="button" value="新增" class="btn btn-link d-inline" @click="add_production" />
+											</div>
+											<div v-else style="display: inline;">
+												<p style="display: inline;font-style: italic;font-size: smaller;">无空余设备！！！</p>
+											</div>
+											<div class="card-body para__style col-md-12">
+												<table class="table  table-striped" style="word-break:break-all; word-wrap:break-all;">
+													<thead>
+														<tr>
+															<th style="white-space: nowrap">序号</th>
+															<th style="white-space: nowrap">组件名称</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr v-for="(production,i) in item.productions">
+															<td style="white-space: nowrap">{{ i+1 }}</td>
+															<td style="white-space: nowrap">
+																<div v-if="production.id == null">
+																	<select class="col-md-12 d-inline form-control" v-model="production.name" style="-webkit-appearance: none;">
+																		<option v-for="name in all_productions">{{ name.name }}</option>
+																	</select>
+																</div>
+																<div v-else>
+																	{{ production.name }}
+																</div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<input type="button" value="提交" class="btn btn-danger btn-style mt-4" @click="customer_add_submit" />
+									</div>
+									<script type="text/javascript">
+										function getParams(key) {
+											var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+											var r = window.location.search.substr(1).match(reg);
+											if (r != null) {
+												return unescape(r[2]);
+											}
+											return null;
+										};
+										//			    console.log("production_nu为:"+getParams("production_nu"));//输出aa
+									</script>
+									<script type="text/javascript">
+										var vm = new Vue({
+											el: "#production_details",
+											data: {
+												item: {
+													"adress": {
+														"adcode": 110000,
+														"name": "北京市"
+													},
+													"f_adress": {
+														"adcode": 110000,
+														"name": "北京市"
+													},
+													"productions": []
+												},
+												first_adress: null,
+												second_adress: null,
+												all_productions: null,
+												customer_nu: null
+											},
+											methods: {
+												open: function(production_nu) {
+													location.href = "customer.html?customer_nu=" + this.customer_nu
+												},
+												add_production: function() {
+													this.item.productions.push({
+														'name': this.all_productions[0].name
+													});
+												},
+												customer_add_submit: function() {
+													pixellot
+														.post('/customer_add/', {
+															item: this.item
+														})
+														.then()
+														.catch();
+													alert('确定添加？');
+													setTimeout("javascript:location.href='customers.html'", 100);
+												}
+											},
+											mounted() {
+												pixellot
+													.get('/customers/')
+													.then(response => (
+														this.first_adress = response.data.first_adress,
+														this.second_adress = response.data.second_adress,
+														this.all_productions = response.data.productions
+													))
+													//.then(response => (this.item = response.data.customers[window.getParams("customer_nu")]))
+													.catch(function(error) { // 请求失败处理
+														console.log(error);
+													})
+											}
+										});
+									</script>
+
+								</form>
+							</div>
+						</div>
+						<!-- //forms 2 -->
+
+					</section>
+					<!-- //forms -->
+		</section>
+		<!-- //forms  -->
+
+		</div>
+		<!-- //content -->
+
+		</div>
+		<!-- main content end-->
+		</section>
+		<!--footer section start-->
+		<footer class="dashboard">
+			<p>© 2020 Pixellot By Yu.</p>
+		</footer>
+		<!--footer section end-->
+		<!-- move top -->
+		<button onclick="topFunction()" id="movetop" class="bg-primary" title="Go to top">
+			<span class="fa fa-angle-up"></span>
+		</button>
+		<script>
+			// When the user scrolls down 20px from the top of the document, show the button
+			window.onscroll = function() {
+				scrollFunction()
+			};
+
+			function scrollFunction() {
+				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+					document.getElementById("movetop").style.display = "block";
+				} else {
+					document.getElementById("movetop").style.display = "none";
+				}
+			}
+
+			// When the user clicks on the button, scroll to the top of the document
+			function topFunction() {
+				document.body.scrollTop = 0;
+				document.documentElement.scrollTop = 0;
+			}
+		</script>
+		<!-- /move top -->
+
+
+		<script src="assets/js/jquery-3.3.1.min.js"></script>
+		<script src="assets/js/jquery-1.10.2.min.js"></script>
+
+		<!-- chart js -->
+		<script src="assets/js/Chart.min.js"></script>
+		<script src="assets/js/utils.js"></script>
+		<!-- //chart js -->
+
+		<!-- Different scripts of charts.  Ex.Barchart, Linechart -->
+		<script src="assets/js/bar.js"></script>
+		<script src="assets/js/linechart.js"></script>
+		<!-- //Different scripts of charts.  Ex.Barchart, Linechart -->
+
+
+		<script src="assets/js/jquery.nicescroll.js"></script>
+		<script src="assets/js/scripts.js"></script>
+
+		<!-- close script -->
+		<script>
+			var closebtns = document.getElementsByClassName("close-grid");
+			var i;
+
+			for (i = 0; i < closebtns.length; i++) {
+				closebtns[i].addEventListener("click", function() {
+					this.parentElement.style.display = 'none';
+				});
+			}
+		</script>
+		<!-- //close script -->
+
+		<!-- disable body scroll when navbar is in active -->
+		<script>
+			$(function() {
+				$('.sidebar-menu-collapsed').click(function() {
+					$('body').toggleClass('noscroll');
+				})
+			});
+		</script>
+		<!-- disable body scroll when navbar is in active -->
+
+		<!-- loading-gif Js -->
+		<script src="assets/js/modernizr.js"></script>
+		<script>
+			$(window).load(function() {
+				// Animate loader off screen
+				$(".se-pre-con").fadeOut("slow");;
+			});
+		</script>
+		<!--// loading-gif Js -->
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="assets/js/bootstrap.min.js"></script>
+
+
+	</body>
+
+</html>

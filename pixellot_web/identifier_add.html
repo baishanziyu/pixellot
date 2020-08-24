@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="zh">
+
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<title>组件新增</title>
+
+		<!-- Template CSS -->
+		<link rel="stylesheet" href="assets/css/style-starter.css">
+
+		<!-- google fonts -->
+		<link href="http://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap" rel="stylesheet">
+
+		<script src="./assets/js/axios.min.js"></script>
+		<script src="./assets/js/config.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./assets/js/vue.js" type="text/javascript" charset="utf-8"></script>
+
+	<body class="sidebar-menu-collapsed">
+		<div class="se-pre-con"></div>
+		<section>
+			<!-- sidebar menu start -->
+			<div class="sidebar-menu sticky-sidebar-menu">
+
+				<!-- logo start -->
+				<div class="logo">
+					<h1><a href="index.html">Pixellot</a></h1>
+				</div>
+
+				<!-- if logo is image enable this -->
+				<!-- image logo --
+    <div class="logo">
+      <a href="index.html">
+        <img src="image-path" alt="Your logo" title="Your logo" class="img-fluid" style="height:35px;" />
+      </a>
+    </div>
+    <!-- //image logo -->
+
+				<div class="logo-icon text-center">
+					<a href="index.html" title="logo"><img src="assets/images/logo.png" alt="logo-icon"> </a>
+				</div>
+				<!-- //logo end -->
+
+				<div class="sidebar-menu-inner">
+
+					<!-- sidebar nav start -->
+					<ul class="nav nav-pills nav-stacked custom-nav">
+						<li class="menu-list">
+							<a href="#"><i class="fa fa-cube"></i>
+								<span>产品 <i class="lnr lnr-chevron-right"></i></span></a>
+							<ul class="sub-menu-list">
+								<li><a href="index.html">产品列表</a> </li>
+								<li><a href="product_type.html">产品类型</a> </li>
+							</ul>
+						</li>
+						<li class="menu-list">
+							<a href="#"><i class="fa fa-clone"></i>
+								<span>组件 <i class="lnr lnr-chevron-right"></i></span></a>
+							<ul class="sub-menu-list">
+								<li><a href="identifiers.html">组件列表</a> </li>
+								<li><a href="identifier_names.html">组件名称</a> </li>
+
+
+								<li><a href="identifier_type.html">组件类别</a> </li>
+							</ul>
+						</li>
+						<li><a href="customers.html"><i class="fa fa-address-card-o"></i> <span>客户</span></a></li>
+						<li><a href="accounts.html"><i class="fa fa-user-o"></i> <span>账号</span></a></li>
+						<li><a href="logs.html"><i class="fa fa-file-text"></i> <span>日志</span></a></li>
+					</ul>
+					<!-- //sidebar nav end -->
+					<!-- toggle button start -->
+					<a class="toggle-btn">
+						<i class="fa fa-angle-double-left menu-collapsed__left"><span>折叠....</span></i>
+						<i class="fa fa-angle-double-right menu-collapsed__right"></i>
+					</a>
+					<!-- //toggle button end -->
+				</div>
+			</div>
+			<!-- //sidebar menu end -->
+			<!-- header-starts -->
+			<div class="header sticky-header">
+
+				<!-- notification menu start -->
+				<div class="menu-right">
+					<div class="navbar user-panel-top">
+						<!------搜索框-----
+					<div class="search-box">
+							<form action="#search-results.html" method="get">
+								<input class="search-input" placeholder="Search Here..." type="search" id="search">
+								<button class="search-submit" value=""><span class="fa fa-search"></span></button>
+							</form>
+						</div>
+
+						----->
+
+
+						<div class="user-dropdown-details d-flex" id="log">
+							<div class="profile_details" v-if="username !== null">
+								<ul>
+									<li class="dropdown profile_details_drop">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu3" aria-haspopup="true"
+										 aria-expanded="false">
+											<div>
+												<i class="fa fa-user-secret fa-2x"></i>
+											</div>
+										</a>
+										<ul class="dropdown-menu drp-mnu" aria-labelledby="dropdownMenu3">
+											<li class="user-info">
+												<h5 class="user-name">{{ username }}</h5>
+												<span class="status ml-2">管理员</span>
+											</li>
+											<li> <a href="account_add.html"><i class="lnr lnr-user"></i>新增账号</a> </li>
+											<li> <a href="account_edit.html"><i class="lnr lnr-users"></i>修改账号</a> </li>
+											<li class="logout" @click="logout"> <a href="index.html"><i class="fa fa-power-off"></i> 退出登录</a> </li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="profile_details" v-else>
+								<ul>
+									<li class="dropdown profile_details_drop">
+										<a href="login.html"><i class="fa fa-laptop"> {{ username }}登录</i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<script type="text/javascript">
+							var app = new Vue({
+								el: "#log",
+								data: {
+									username: localStorage.getItem('username')
+								},
+								methods: {
+									pedit: function() {
+										location.href = "identifier_edit.html?identifier_nu=" + window.getParams("identifier_nu")
+									},
+									logout: function(event) {
+										localStorage.clear()
+									}
+								}
+							})
+						</script>
+					</div>
+				</div>
+				<!--notification menu end -->
+			</div>
+			<!-- //header-ends -->
+
+			<!-- main content start -->
+			<div class="main-content">
+				<!-- content -->
+				<div class="container-fluid content-top-gap">
+
+					<!-- breadcrumbs -->
+					<nav aria-label="breadcrumb" class="mb-4">
+						<ol class="breadcrumb my-breadcrumb">
+							<li class="breadcrumb-item"><a href="index.html">首页</a></li>
+							<li class="breadcrumb-item"><a href="identifiers.html">组件列表</a></li>
+							<li class="breadcrumb-item active" aria-current="page">组件新增</li>
+						</ol>
+					</nav>
+					<!-- //breadcrumbs -->
+					<!-- forms -->
+					<section class="forms">
+						<!-- forms 2 -->
+						<div class="card card_border py-2 mb-4">
+							<div class="cards__heading">
+								<h3>组件新增 <span></span></h3>
+							</div>
+							<div class="card-body" id='identifier_add'>
+								<form action="#" method="post">
+									<div class="form-row">
+										<div class="form-group col-md-12">
+											<label for="inputEmail4" class="input__label">组件名称</label>
+											<select class="col-md-12 d-inline form-control" v-model="item.identifier_name" style="-webkit-appearance: none;">
+												<option v-for="name in identifiers">{{ name.item }}</option>
+											</select>
+										</div>
+										<div class="form-group col-md-12">
+											<label for="inputEmail4" class="input__label">所属产品类别</label>
+											<select class="col-md-12 d-inline form-control" v-model="item.production_type" style="-webkit-appearance: none;">
+												<option v-for="pt_i in pt_is" v-if="pt_i.identifier_name == item.identifier_name">{{ pt_i.product_type_name }}</option>
+											</select>
+										</div>
+										<label for="inputEmail4" class="input__label">所属产品</label>
+										<select class="col-md-12 d-inline form-control" v-model="item.production_name" style="-webkit-appearance: none;">
+											<option v-for="name in productions" v-if="name.product_type == item.production_type">{{ name.name }}</option>
+										</select>
+										<label for="inputEmail4" class="input__label">产品号</label>
+										<input type="text" class="form-control" id="addnumber" v-model='item.product_id' placeholder="产品名称">
+										<label for="inputEmail4" class="input__label">序列号</label>
+										<input type="text" class="form-control" id="addnumber" v-model='item.serial_number' placeholder="产品名称">
+									</div>
+								</form>
+								<input type="button" value="提交" class="btn btn-danger btn-style mt-4" @click="identifier_add_submit" />
+							</div>
+
+							<script type="text/javascript">
+								function getParams(key) {
+									var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)");
+									var r = window.location.search.substr(1).match(reg);
+									if (r != null) {
+										return unescape(r[2]);
+									}
+									return null;
+								};
+								//			    console.log("identifier_nu为:"+getParams("identifier_nu"));//输出aa
+							</script>
+							<script type="text/javascript">
+								var vm = new Vue({
+									el: "#identifier_add",
+									data: {
+										item: {},
+										identifiers: null,
+										productions: null,
+										pt_is: null,
+										identifier_nu: null
+									},
+									methods: {
+										open: function(identifier_nu) {
+											location.href = "identifier_edit.html?identifier_nu=" + this.identifier_nu
+										},
+										identifier_add_submit: function() {
+											pixellot
+												.post('/identifier_add/', {
+													item: this.item
+												})
+												.then()
+												.catch();
+											alert('确定添加？');
+											setTimeout("javascript:location.href='identifiers.html'", 100);
+										}
+									},
+									mounted() {
+										pixellot
+											.get('/iids/')
+											.then(response => (
+												this.identifiers = response.data.identifiers,
+												this.productions = response.data.productions,
+												this.pt_is = response.data.pt_is
+											))
+											.catch(function(error) { // 请求失败处理
+												console.log(error);
+											})
+									}
+								});
+							</script>
+
+						</div>
+						<!-- //forms 2 -->
+
+					</section>
+					<!-- //forms -->
+		</section>
+		<!-- //forms  -->
+
+		</div>
+		<!-- //content -->
+
+		</div>
+		<!-- main content end-->
+		</section>
+		<!--footer section start-->
+		<footer class="dashboard">
+			<p>© 2020 Pixellot By Yu.</p>
+		</footer>
+		<!--footer section end-->
+		<!-- move top -->
+		<button onclick="topFunction()" id="movetop" class="bg-primary" title="Go to top">
+			<span class="fa fa-angle-up"></span>
+		</button>
+		<script>
+			// When the user scrolls down 20px from the top of the document, show the button
+			window.onscroll = function() {
+				scrollFunction()
+			};
+
+			function scrollFunction() {
+				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+					document.getElementById("movetop").style.display = "block";
+				} else {
+					document.getElementById("movetop").style.display = "none";
+				}
+			}
+
+			// When the user clicks on the button, scroll to the top of the document
+			function topFunction() {
+				document.body.scrollTop = 0;
+				document.documentElement.scrollTop = 0;
+			}
+		</script>
+		<!-- /move top -->
+
+
+		<script src="assets/js/jquery-3.3.1.min.js"></script>
+		<script src="assets/js/jquery-1.10.2.min.js"></script>
+
+		<!-- chart js -->
+		<script src="assets/js/Chart.min.js"></script>
+		<script src="assets/js/utils.js"></script>
+		<!-- //chart js -->
+
+		<!-- Different scripts of charts.  Ex.Barchart, Linechart -->
+		<script src="assets/js/bar.js"></script>
+		<script src="assets/js/linechart.js"></script>
+		<!-- //Different scripts of charts.  Ex.Barchart, Linechart -->
+
+
+		<script src="assets/js/jquery.nicescroll.js"></script>
+		<script src="assets/js/scripts.js"></script>
+
+		<!-- close script -->
+		<script>
+			var closebtns = document.getElementsByClassName("close-grid");
+			var i;
+
+			for (i = 0; i < closebtns.length; i++) {
+				closebtns[i].addEventListener("click", function() {
+					this.parentElement.style.display = 'none';
+				});
+			}
+		</script>
+		<!-- //close script -->
+
+		<!-- disable body scroll when navbar is in active -->
+		<script>
+			$(function() {
+				$('.sidebar-menu-collapsed').click(function() {
+					$('body').toggleClass('noscroll');
+				})
+			});
+		</script>
+		<!-- disable body scroll when navbar is in active -->
+
+		<!-- loading-gif Js -->
+		<script src="assets/js/modernizr.js"></script>
+		<script>
+			$(window).load(function() {
+				// Animate loader off screen
+				$(".se-pre-con").fadeOut("slow");;
+			});
+		</script>
+		<!--// loading-gif Js -->
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="assets/js/bootstrap.min.js"></script>
+
+
+	</body>
+
+</html>
