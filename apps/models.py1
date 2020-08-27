@@ -15,7 +15,7 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(64), nullable=False, index=True, unique=True)
     password_hash = db.Column(db.String(128), nullable=False)
 
-    change_records = db.relationship('Change_record', backref='change_records')
+#    change_records = db.relationship('Change_record', backref='change_records')
 
     @property
     def password(self):
@@ -50,8 +50,8 @@ class User(UserMixin, db.Model):
 
     def to_json(self):
         records = []
-        if self.change_records:
-            records = self.change_records
+        if Change_record.query.filter_by(change_userid=self.id).all():
+            records = Change_record.query.filter_by(change_userid=self.id).all()
         json_user = {
             'id': self.id,
             'username': self.username,
@@ -63,7 +63,7 @@ class Repair_record(db.Model):
     __tablename__ = 'repair_records'
     id = db.Column(db.Integer, autoincrement=True, primary_key=True, nullable=False, unique=True)
     content = db.Column(db.Text)
-    production_id = db.Column(db.Integer, db.ForeignKey('productions.id'))
+    production_id = db.Column(db.Integer)
 
     def __repr__(self):
         return '<Repair_record %r>' % self.content
@@ -71,11 +71,12 @@ class Repair_record(db.Model):
     def to_json(self):
         production_name = None
         if self.production_id:
-            production_name = self.repair_records.name
+            production_name = Production.query.filter_by(id=self.production_id).first().name
         json_repair_record = {
             'id': self.id,
             'content': self.content,
-            'production_id' : production_name
+            'production_id' : self.production_id,
+            'production_name': production_name
         }
         return json_repair_record
 
@@ -88,11 +89,11 @@ class Production(db.Model):
     date_out = db.Column(db.DateTime)
     location = db.Column(db.String(128))
 
-    product_type_id = db.Column(db.Integer, db.ForeignKey('product_types.id'))
-    customer_id = db.Column(db.Integer, db.ForeignKey('customers.id'))
+    product_type_id = db.Column(db.Integer)
+    customer_id = db.Column(db.Integer)
 
-    repair_records = db.relationship('Repair_record', backref='repair_records')
-    iids = db.relationship('Iid', backref='pids')
+#    repair_records = db.relationship('Repair_record', backref='repair_records')
+#    iids = db.relationship('Iid', backref='pids')
 
     def __repr__(self):
         return '<Production %r>' % self.name
@@ -103,13 +104,13 @@ class Production(db.Model):
         iids = []
         repair_records = []
         if self.product_type_id:
-            product_type = self.product_type.name
+            product_type = Product_type.query.filter_by(id=self.product_type_id).first().name
         if self.customer_id:
-            customer_name = self.bought.customer_name
-        if self.repair_records:
-            repair_records = self.repair_records
-        if self.iids:
-            iids = self.iids
+            customer_name = Customer.query.filter_by(id=self.customer_id).first().customer_name
+        if Repair_record.query.filter_by(production_id=self.id).all():
+            repair_records = Repair_record.query.filter_by(production_id=self.id).all()
+        if Iid.query.filter_by(production_id=self.id).all():
+            iids = Iid.query.filter_by(production_id=self.id).all()
         json_production = {
             'id': self.id,
             'name': self.name,
@@ -120,7 +121,7 @@ class Production(db.Model):
             'product_type': product_type,
             'customer': customer_name,
             'records': [{'record_id':record.id, 'record_content': record.content} for record in repair_records],
-            'iids': [{'iid_id':iid.iids.id, 'iid_name':iid.iids.item, 'iid_product_id':iid.product_id, 'iid_serial_number':iid.serial_number} for iid in iids]
+            'iids': [{'iid_id':iid.identifier_id, 'iid_name':Identifier.query.filter_by(id=iid.identifier_id).first().item, 'iid_product_id':iid.product_id, 'iid_serial_number':iid.serial_number} for iid in iids]
         }
         return json_production
 
@@ -128,8 +129,8 @@ class Pt_i(db.Model):
     __tablename__ = 'pt_is'
     id = db.Column(db.Integer, autoincrement=True, primary_key=True, nullable=False, unique=True)
 
-    identifier_id = db.Column(db.Integer, db.ForeignKey('identifiers.id'))
-    product_type_id = db.Column(db.Integer, db.ForeignKey('product_types.id'))
+    identifier_id = db.Column(db.Integer)
+    product_type_id = db.Column(db.Integer)
 
     def __repr__(self):
         return '<Pt_i %r>' % self.id
@@ -138,9 +139,9 @@ class Pt_i(db.Model):
         identifier_name = None
         product_type_name = None
         if self.identifier_id:
-            identifier_name = self.i_pt.item
+            identifier_name = Identifier.query.filter_by(id=self.identifier_id).first().item
         if self.product_type_id:
-            product_type_name = self.pt_i.name
+            product_type_name = Product_type.query.filter_by(id=self.product_type_id).first().name
         json_pt_i = {
             'id': self.id,
             'identifier_name': identifier_name,
@@ -154,26 +155,27 @@ class Product_type(db.Model):
     id = db.Column(db.Integer, autoincrement=True, primary_key=True, nullable=False, unique=True)
     name = db.Column(db.String(64))
 
-    productions = db.relationship('Production', backref='product_type')
-    pt_is = db.relationship('Pt_i', backref='pt_i')
+    #productions = db.relationship('Production', backref='product_type')
+    #pt_is = db.relationship('Pt_i', backref='pt_i')
 
 
     def __repr__(self):
         return '<Product_type %r>' % self.name
 
     def to_json(self):
+        name = None
         productions = []
-        pt_is= []
-        if self.productions:
-            productions = self.productions
-        if self.pt_is:
-            pt_is = self.pt_is
+        pt_is = []
+        if Production.query.filter_by(product_type_id=self.id).all():
+            productions = Production.query.filter_by(product_type_id=self.id).all()
+        if Pt_i.query.filter_by(product_type_id=self.id).all():
+            pt_is = Pt_i.query.filter_by(product_type_id=self.id).all()
+
         json_product_type = {
             'id': self.id,
             'name': self.name,
             'productions': [{'id':production.id, 'name':production.name} for production in productions],
-            'pt_is': [{'id':pt_i.id,'name':pt_i.i_pt.item} for pt_i in pt_is ]
-
+            'pt_is':[{'id':pt_i.id,'name':Product_type.query.filter_by(id=pt_i.product_type_id).first()} for pt_i in pt_is]
         }
         return json_product_type
 
@@ -183,8 +185,8 @@ class Iid(db.Model):
     product_id = db.Column(db.String(64), nullable=True)
     serial_number = db.Column(db.String(64), nullable=True)
 
-    production_id = db.Column(db.Integer, db.ForeignKey('productions.id'))
-    identifier_id = db.Column(db.Integer, db.ForeignKey('identifiers.id'))
+    production_id = db.Column(db.Integer)
+    identifier_id = db.Column(db.Integer)
 
     def __repr__(self):
         return '<Iid%r>' % self.product_id
@@ -195,15 +197,16 @@ class Iid(db.Model):
         production_name = None
         production_type = None
         if self.identifier_id:
-            identifier_name = self.iids.item
-            identifier_type = None
-            if self.iids.identifier_type:
-                identifier_type = self.iids.identifier_type.name
+            if Identifier.query.filter_by(id=self.id).first():
+                identifier_name = Identifier.query.filter_by(id=self.id).first().item
+                identifier_type = None
+            if Identifier.query.filter_by(id=self.identifier_id).first().identifier_type_id:
+                identifier_type = Identifier_type.query.filter_by(id=Identifier.query.filter_by(id=self.identifier_id).first().identifier_type_id).first().name
         if self.production_id:
-            production_name = self.pids.name
+            production_name = Production.query.filter_by(id=self.production_id).first().name
             production_type = None
-            if self.pids.product_type:
-                production_type = self.pids.product_type.name
+            if Production.query.filter_by(id=self.production_id).first().product_type_id:
+                production_type = Product_type.query.filter_by(id=Production.query.filter_by(id=self.production_id).first().product_type_id).first().name
         json_iid= {
             'id': self.id,
             'product_id': self.product_id,
@@ -220,10 +223,10 @@ class Identifier(db.Model):
     id = db.Column(db.Integer, autoincrement=True, primary_key=True, nullable=False, unique=True)
     item = db.Column(db.String(64), nullable=False)
 
-    identifier_type_id = db.Column(db.Integer, db.ForeignKey('identifier_types.id'))
+    identifier_type_id = db.Column(db.Integer)
 
-    iids =  db.relationship('Iid', backref='iids')
-    pt_is = db.relationship('Pt_i', backref='i_pt')
+    #iids =  db.relationship('Iid', backref='iids')
+    #pt_is = db.relationship('Pt_i', backref='i_pt')
 
     def __repr__(self):
         return '<Identifier %r>' % self.item
@@ -233,17 +236,19 @@ class Identifier(db.Model):
         pt_is = []
         iids = []
         if self.identifier_type_id:
-            identifier_type_name = self.identifier_type.name
-        if self.iids:
-            iids = self.iids
-        if self.pt_is:
-            pt_is = self.pt_is
+            identifier_type_name = Identifier_type.query.filter_by(id=self.identifier_type_id).first().name
+        if Iid.query.filter_by(identifier_id=self.id).all():
+            iids = Iid.query.filter_by(identifier_id=self.id).all()
+        if Pt_i.query.filter_by(identifier_id=self.id).all():
+            pt_is = Pt_i.query.filter_by(identifier_id=self.id).all()
+        #if Pt_i.query.filter_by(identifier_id=self.id).all():
+            #pt_is = Pt_i.query.filter_by(identifier_id=self.id).all()
         json_identifier  = {
             'id': self.id,
             'item': self.item,
             'identifier_type': identifier_type_name,
             'iids': [{'iid.product_id':iid.product_id, 'iid.serial_number':iid.serial_number} for iid in iids],
-            'pt_is':[{'id':pt_i.id,'name':pt_i.pt_i.name} for pt_i in pt_is]
+            'pt_is':[{'id':pt_i.id,'name':Product_type.query.filter_by(id=pt_i.product_type_id).first().name} for pt_i in pt_is]
             ##pt_i的id, product_type的name
         }
         return json_identifier
@@ -254,15 +259,15 @@ class Identifier_type(db.Model):
     id = db.Column(db.Integer, autoincrement=True, primary_key=True, nullable=False, unique=True)
     name = db.Column(db.String(64))
 
-    identifiers = db.relationship('Identifier', backref='identifier_type')
+    #identifiers = db.relationship('Identifier', backref='identifier_type')
 
     def __repr__(self):
         return '<Identifier_type %r>' % self.name
 
     def to_json(self):
         identifiers = []
-        if self.identifiers:
-            identifiers = self.identifiers
+        if Identifier.query.filter_by(identifier_type_id=self.id).all():
+            identifiers = Identifier.query.filter_by(identifier_type_id=self.id).all()
         json_identifier_type  = {
             'id': self.id,
             'name': self.name,
@@ -277,8 +282,8 @@ class Customer(db.Model):
     contacts= db.Column(db.String(64))
     phone = db.Column(db.String(64))
 
-    adress_id = db.Column(db.Integer, db.ForeignKey('adress.id'))
-    productions = db.relationship('Production', backref='bought')
+    adress_id = db.Column(db.Integer)
+    #productions = db.relationship('Production', backref='bought')
 
     def __repr__(self):
         return '<Customer %r>' % self.customer_name
@@ -290,12 +295,12 @@ class Customer(db.Model):
         f_adress_adcode=None
         productions = []
         if self.adress_id:
-            adress_name = self.customer.name
-            adress_adcode = self.customer.adcode
-            f_adress_adcode = self.customer.adcode - self.customer.adcode%10000
+            adress_name = Adress.query.filter_by(id=self.adress_id).first().name
+            adress_adcode = Adress.query.filter_by(id=self.adress_id).first().adcode
+            f_adress_adcode = Adress.query.filter_by(id=self.adress_id).first().adcode - Adress.query.filter_by(id=self.adress_id).first().adcode%10000
             f_adress_name= Adress.query.filter_by(adcode=f_adress_adcode).first().name
-        if self.productions:
-            productions = self.productions
+        if Production.query.filter_by(customer_id=self.id).all():
+            productions = Production.query.filter_by(customer_id=self.id).all()
 
         json_customer = {
             'id': self.id,
@@ -313,7 +318,7 @@ class Adress(db.Model):
     id = db.Column(db.Integer, autoincrement=True, primary_key=True, nullable=False, unique=True)
     name = db.Column(db.String(64), nullable=False, unique=True)
     adcode = db.Column(db.Integer, nullable=False, unique=True)
-    customers = db.relationship('Customer', backref='customer')
+    #customers = db.relationship('Customer', backref='customer')
 
     def __repr__(self):
         return '<adress %r>' % self.name
@@ -331,7 +336,7 @@ class Change_record(db.Model):
     change_time = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     change_description = db.Column(db.Text, nullable=False)
 
-    change_userid = db.Column(db.Integer, db.ForeignKey('users.id'))
+    change_userid = db.Column(db.Integer)
 
     def __repr__(self):
         return '<change_record %r>' % self.change_description
@@ -339,7 +344,7 @@ class Change_record(db.Model):
     def to_json(self):
         change_userid = None
         if self.change_userid:
-            change_userid = self.change_records.username
+            change_userid = User.query.filter_by(id=self.change_userid).first().username
         json_change_record  = {
             'id': self.id,
             'change_user': change_userid,

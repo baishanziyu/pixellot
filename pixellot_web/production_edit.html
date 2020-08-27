@@ -98,6 +98,11 @@
 
 
 						<div class="user-dropdown-details d-flex" id="log">
+							<div class="profile_details_left" v-if="username !== null">
+							  <a class="btn btn-danger" href="#" aria-label="Delete" @click="page_delete">
+							    <i class="fa fa-trash-o" aria-hidden="true"></i>
+							  </a>
+							</div>
 							<div class="profile_details" v-if="username !== null">
 								<ul>
 								  <li class="dropdown profile_details_drop">
@@ -139,6 +144,16 @@
 									},
 									logout: function(event) {
 										localStorage.clear()
+									},
+									page_delete: function(event) {
+										alert('确定删除当前设备？');
+										path = '/production_drop/' + window.getParams("production_nu"),
+										pixellot
+											.post(path)
+											.then()
+											.catch(function (error) { // 请求失败处理
+												console.log(error);
+											});
 									}
 								}
 							})

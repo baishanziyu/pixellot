@@ -163,18 +163,25 @@ class Product_type(db.Model):
         return '<Product_type %r>' % self.name
 
     def to_json(self):
+        name = None
         productions = []
         pt_is= []
+        ptis = []
         if Production.query.filter_by(product_type_id=self.id).all():
             productions = Production.query.filter_by(product_type_id=self.id).all()
         if Pt_i.query.filter_by(product_type_id=self.id).all():
             pt_is = Pt_i.query.filter_by(product_type_id=self.id).all()
+            for pt_i in pt_is:
+                if Product_type.query.filter_by(id=pt_i.product_type_id).first():
+                    ptis.append({'id':pt_i.id,'name': Product_type.query.filter_by(id=pt_i.product_type_id).first().name})
+                else:
+                    ptis.append({'id':pt_i.id,'name': None})
         json_product_type = {
             'id': self.id,
             'name': self.name,
             'productions': [{'id':production.id, 'name':production.name} for production in productions],
-            'pt_is': [{'id':pt_i.id,'name':Identifier.query.filter_by(id=pt_i.identifier_id).first().item} for pt_i in pt_is]
-
+            'pt_is': ptis
+            #'pt_is':[{'id':pt_i.id,'name': Product_type.query.filter_by(id=pt_i.product_type_id).first().name} for pt_i in pt_is]
         }
         return json_product_type
 
@@ -196,8 +203,9 @@ class Iid(db.Model):
         production_name = None
         production_type = None
         if self.identifier_id:
-            identifier_name = Identifier.query.filter_by(id=self.id).first().item
-            identifier_type = None
+            if Identifier.query.filter_by(id=self.id).first():
+                identifier_name = Identifier.query.filter_by(id=self.id).first().item
+                identifier_type = None
             if Identifier.query.filter_by(id=self.identifier_id).first().identifier_type_id:
                 identifier_type = Identifier_type.query.filter_by(id=Identifier.query.filter_by(id=self.identifier_id).first().identifier_type_id).first().name
         if self.production_id:
@@ -233,12 +241,18 @@ class Identifier(db.Model):
         identifier_type_name = None
         pt_is = []
         iids = []
+        ptis = []
         if self.identifier_type_id:
             identifier_type_name = Identifier_type.query.filter_by(id=self.identifier_type_id).first().name
         if Iid.query.filter_by(identifier_id=self.id).all():
             iids = Iid.query.filter_by(identifier_id=self.id).all()
         if Pt_i.query.filter_by(identifier_id=self.id).all():
             pt_is = Pt_i.query.filter_by(identifier_id=self.id).all()
+            for pt_i in pt_is:
+                if Product_type.query.filter_by(id=pt_i.product_type_id).first():
+                    ptis.append({'id':pt_i.id,'name': Product_type.query.filter_by(id=pt_i.product_type_id).first().name})
+                else:
+                    ptis.append({'id':pt_i.id,'name': None})
         #if Pt_i.query.filter_by(identifier_id=self.id).all():
             #pt_is = Pt_i.query.filter_by(identifier_id=self.id).all()
         json_identifier  = {
@@ -246,7 +260,8 @@ class Identifier(db.Model):
             'item': self.item,
             'identifier_type': identifier_type_name,
             'iids': [{'iid.product_id':iid.product_id, 'iid.serial_number':iid.serial_number} for iid in iids],
-            'pt_is':[{'id':pt_i.id,'name':Product_type.query.filter_by(id=pt_i.product_type_id).first().name} for pt_i in pt_is]
+            'pt_is': ptis
+            #'pt_is':[{'id':pt_i.id,'name':Product_type.query.filter_by(id=pt_i.product_type_id).first().name} for pt_i in pt_is]
             ##pt_i的id, product_type的name
         }
         return json_identifier

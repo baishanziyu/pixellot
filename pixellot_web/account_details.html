@@ -101,11 +101,10 @@
 							<div class="profile_details_left" v-if="username !== null">
 							  <ul class="nofitications-dropdown">
 							    <li class="dropdown">
-							      
-							      </li>
+							     <a href="#"><i class="fa fa-trash-o btn-danger" @click="pdrop"></i></a>
+							     </li>
 							    <li class="dropdown">
-							      <a href="#"><i
-							          class="fa fa-wrench" @click="pedit"></i></a>
+							      <a href="#"><i class="fa fa-wrench" @click="pedit"></i></a>
 							     </li>
 							  </ul>
 							</div>
@@ -145,6 +144,9 @@
 									username: localStorage.getItem('username')
 								},
 								methods: {
+									pdrop: function () {
+										location.href="account_drop.html?account_nu=" + window.getParams("account_nu")
+									},
 									pedit: function () {
 										location.href="account_edit.html?account_nu=" + window.getParams("account_nu")
 									},

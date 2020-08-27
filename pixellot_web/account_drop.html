@@ -6,7 +6,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<title>组件详情</title>
+		<title>账号详情</title>
 
 		<!-- Template CSS -->
 		<link rel="stylesheet" href="assets/css/style-starter.css">
@@ -98,17 +98,6 @@
 
 
 						<div class="user-dropdown-details d-flex" id="log">
-							<div class="profile_details_left" v-if="username !== null">
-							  <ul class="nofitications-dropdown">
-							    <li class="dropdown">
-							     <a href="#"><i class="fa fa-trash-o btn-danger" @click="pdrop"></i></a>
-							     </li>
-							    <li class="dropdown">
-							      <a href="#"><i
-							          class="fa fa-wrench" @click="pedit"></i></a>
-							      </li>
-							  </ul>
-							</div>
 							<div class="profile_details" v-if="username !== null">
 								<ul>
 								  <li class="dropdown profile_details_drop">
@@ -146,10 +135,10 @@
 								},
 								methods: {
 									pdrop: function () {
-										location.href="identifier_drop.html?identifier_nu=" + window.getParams("identifier_nu")
+										location.href="custormer_drop.html?customer_nu=" + window.getParams("customer_nu")
 									},
 									pedit: function () {
-										location.href="identifier_edit.html?identifier_nu=" + window.getParams("identifier_nu")
+										location.href="account_edit.html?account_nu=" + window.getParams("account_nu")
 									},
 									logout: function(event) {
 										localStorage.clear()
@@ -172,8 +161,8 @@
 					<nav aria-label="breadcrumb" class="mb-4">
 						<ol class="breadcrumb my-breadcrumb">
 							<li class="breadcrumb-item"><a href="index.html">首页</a></li>
-							<li class="breadcrumb-item"><a href="identifiers.html">组件列表</a></li>
-							<li class="breadcrumb-item active" aria-current="page">组件详情</li>
+							<li class="breadcrumb-item"><a href="customers.html">账号</a></li>
+							<li class="breadcrumb-item active" aria-current="page">账号删除</li>
 						</ol>
 					</nav>
 					<!-- //breadcrumbs -->
@@ -182,49 +171,20 @@
 						<!-- forms 2 -->
 						<div class="card card_border py-2 mb-4">
 							<div class="cards__heading">
-								<h3>组件详情 <span></span></h3>
+								<h3>账号详情 <span></span></h3>
 							</div>
 							<div class="card-body">
 								<form action="#" method="post">
-									<div class="form-row" id='identifier_details'>
+									<div class="form-row" id='account_edit'>
 										<div class="form-group col-md-12">
-											<label for="inputEmail4" class="input__label">组件名称</label>
+											<label for="inputEmail4" class="input__label">用户名</label>
 											<li class="list-group-item form-control input-style">
 												<div class="col-lg-12">
-													{{ item.identifier_name }}
+													{{ item.username }}
 												</div>
 											</li>
 										</div>
-										<label for="inputEmail4" class="input__label">类别</label>
-										<li class="list-group-item form-control input-style">
-											<div class="col-lg-12">
-												{{ item.identifier_type }}
-											</div>
-										</li>
-										<label for="inputEmail4" class="input__label">产品号</label>
-										<li class="list-group-item form-control input-style">
-											<div class="col-lg-12">
-												{{ item.product_id }}
-											</div>
-										</li>
-										<label for="inputEmail4" class="input__label">序列号</label>
-										<li class="list-group-item form-control input-style">
-											<div class="col-lg-12">
-												{{ item.serial_number }}
-											</div>
-										</li>
-										<label for="inputEmail4" class="input__label">所属产品</label>
-										<li class="list-group-item form-control input-style">
-											<div class="col-lg-12">
-												{{ item.production_name }}
-											</div>
-										</li>
-										<label for="inputEmail4" class="input__label">所属产品类别</label>
-										<li class="list-group-item form-control input-style">
-											<div class="col-lg-12">
-												{{ item.production_type }}
-											</div>
-										</li>
+										<input type="button" value="确认删除" class="btn btn-danger btn-style mt-4" @click="drop()" />
 									</div>
 									<script type="text/javascript">
 										function getParams(key) {
@@ -235,24 +195,35 @@
 											}
 											return null;
 										};
-										//			    console.log("identifier_nu为:"+getParams("identifier_nu"));//输出aa
+										//			    console.log("account_nu为:"+getParams("account_nu"));//输出aa
 									</script>
 									<script type="text/javascript">
 										var vm = new Vue({
-											el: "#identifier_details",
+											el: "#account_edit",
 											data: {
 												item: 'root',
-												identifier_nu: null
+												account_nu: null
 											},
 											methods: {
-												open: function (identifier_nu) {
-														location.href="identifier_edit.html?identifier_nu=" + this.identifier_nu
+												drop: function(event) {
+													alert('确定删除当前设备信息？');
+													path = '/user_drop/' + this.item.id,
+													pixellot
+														.post(path)
+														.then()
+														.catch(function (error) { // 请求失败处理
+															console.log(error);
+														});
+														setTimeout("javascript:location.href='accounts.html'", 100);
+												},
+												open: function (account_nu) {
+														location.href="account.html?account_nu=" + this.account_nu
 												}
 											 },
 											mounted() {
 												pixellot
-													.get('/iids/')
-													.then(response => (this.item = response.data.iids[window.getParams("identifier_nu")]))
+													.get('/users/')
+													.then(response => (this.item = response.data.users[window.getParams("account_nu")]))
 													.catch(function(error) { // 请求失败处理
 														console.log(error);
 													})

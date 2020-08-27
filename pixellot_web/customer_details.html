@@ -101,6 +101,9 @@
 							<div class="profile_details_left" v-if="username !== null">
 							  <ul class="nofitications-dropdown">
 							    <li class="dropdown">
+							     <a href="#"><i class="fa fa-trash-o btn-danger" @click="pdrop"></i></a>
+							     </li>
+							    <li class="dropdown">
 							      <a href="#"><i
 							          class="fa fa-wrench" @click="pedit"></i></a>
 							      </li>
@@ -142,6 +145,9 @@
 									username: localStorage.getItem('username')
 								},
 								methods: {
+									pdrop: function () {
+										location.href="customer_drop.html?customer_nu=" + window.getParams("customer_nu")
+									},
 									pedit: function () {
 										location.href="custormer_edit.html?customer_nu=" + window.getParams("customer_nu")
 									},

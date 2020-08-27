@@ -656,14 +656,17 @@ def p_c_clear():
 ##page_delete
 @main.route('/production_drop/<int:production_id>', methods=['POST'])
 def production_drop(production_id):
-    production = Production.query.filter_by(id=production_id).first()
+    print(str(production_id))
+
+
+'''
+    production = Production.query.filter_by(production_id).first()
     if production:
-        iids = Iid.query.filter_by(production_id=production.id).all()
+        iid = Iid.query.filter_by(production_id=production.id).first()
         repair_record = Repair_record.query.filter_by(production_id=production.id).first()
-        if iids:
-            for iid in iids:
-                iid.production_id = None
-                db.session.add(iid)
+        if iid:
+            iid.production_id = None
+            db.session.add(iid)
 
         if repair_record:
             db.session.delete(repair_record)
@@ -674,23 +677,23 @@ def production_drop(production_id):
         db.session.add(change_record)
         db.session.delete(production)
         db.session.commit()
-    #print(str(production_id))
+ '''
     return 'drop success!'
 
 
-@main.route('/product_type_drop/<int:product_type_id>', methods=['POST'])
+@main.route('/product_type_drop/<int:ptoduct_type_id>', methods=['POST'])
 def product_type_drop(product_type_id):
+    '''
     product_type = Product_type.query.filter_by(id=product_type_id).first()
-    productions = Production.query.filter_by(product_type_id=product_type_id).all()
+    production = Production.query.filter_by(product_type_id=product_type_id).first()
     pt_i = Pt_i.query.filter_by(product_type_id=product_type_id).first()
 
     if product_type:
         db.session.delete(product_type)
 
-    if productions:
-        for production in productions:
-            production.product_type_id = None
-            db.session.add(production)
+    if production:
+        production.product_type_id = None
+        db.session.add(production)
 
     if pt_i:
         db.session.delete(pt_i)
@@ -700,103 +703,114 @@ def product_type_drop(product_type_id):
 
     db.session.add(change_record)
     db.session.commit()
-    #print(str(product_type_id))
+'''
+    print(product_type_id)
     return 'drop cussess!'
 
 
 @main.route('/identifier_drop/<int:identifier_id>', methods=['POST'])
 def identifier_drop(identifier_id):
-    identifier = Identifier.query.filter_by(id=identifier_id).first()
-    pt_i = Pt_i.query.filter_by(identifier_id=identifier_id).first()
+    '''
+        identifier = Identifier.query.filter_by(id=identifier_id).first()
+        pt_i = Pt_i.query.filter_by(identifier_id=identifier_id).first()
 
-    iids = Iid.query.filter_by(identifier_id=identifier_id).all()
+        iid = Iid.query.filter_by(identifier_id=identifier_id).first()
 
-    if identifier:
-        db.session.delete(identifier)
+        if identifier:
+            db.session.delete(identifier)
 
-    if pt_i:
-        db.session.delete(pt_i)
+        if pt_i:
+            db.session.delete(pt_i)
 
-    if iids:
-        for iid in iids:
+        if iid:
             iid.identifier_id = None
             db.session.add(iid)
 
-    user = g.current_user
-    change_record = Change_record(change_userid=user.id, change_description='删除组件名称:' + str(identifier.item))
+        user = g.current_user
+        change_record = Change_record(change_userid=user.id, change_description='删除组件名称:' + str(identifier.item))
 
-    db.session.add(change_record)
-    db.session.commit()
-    #print(str(identifier_id))
+        db.session.add(change_record)
+        db.session.commit()
+    '''
+
+
+    print(identifier_id)
     return 'drop cussess!'
 
 
 @main.route('/identifier_type_drop/<int:identifier_type_id>', methods=['POST'])
 def identifier_type_drop(identifier_type_id):
+    '''
     identifier_type = Identifier_type.query.filter_by(id=identifier_type_id).first()
 
-    identifiers= Identifier.query.filter_by(identifier_type_id=identifier_type_id).all()
+    identifier= Identifier.query.filter_by(identifier_type_id=identifier_type_id).first()
 
     if identifier_type:
         db.session.delete(identifier_type)
 
-    if identifiers:
-        for idengtifier in identifiers:
-            identifier.identifier_type_id = None
-            db.session.add(identifier)
+    if identifier:
+        identifier.identifier_type_id = None
+        db.session.add(identifier)
 
         user = g.current_user
         change_record = Change_record(change_userid=user.id, change_description='删除组件类型:id:' + str(identifier_type_id))
 
         db.session.add(change_record)
         db.session.commit()
-    #print(str(identifier_type_id))
+'''
+    print(identifier_type_id)
     return 'drop cussess!'
 
 
 @main.route('/iid_drop/<int:iid_id>', methods=['POST'])
 def iid_drop(iid_id):
-    iid = Iid.query.filter_by(id=iid_id).first()
+    '''
+        iid = Iid.query.filter_by(id=iid_id).first()
 
-    if iid:
-        db.session.delete(iid)
+        if iid:
+            db.session.delete(iid)
 
-    user = g.current_user
-    change_record = Change_record(change_userid=user.id, change_description='删除组件:id:' + str(iid_id))
+        user = g.current_user
+        change_record = Change_record(change_userid=user.id, change_description='删除组件:id:' + str(iid_id))
 
-    db.session.add(change_record)
-    db.session.commit()
+        db.session.add(change_record)
+        db.session.commit()
+    '''
 
-    #print(str(iid_id))
+
+    print(iid_id)
     return 'drop cussess!'
 
 
 @main.route('/customer_drop/<int:customer_id>', methods=['POST'])
 def customer_drop(customer_id):
-    customer = Customer.query.filter_by(id=customer_id).first()
-    productions = Production.query.filter_by(customer_id=customer_id).all()
+    '''
+        customer = Customer.query.filter_by(id=customer_id).first()
+        production = Production.query.filter_by(customer_id=customer_id).first()
 
-    if customer:
-        db.session.delete(customer)
+        if customer:
+            db.session.delete(customer)
 
-    if productions:
-        for production in productions:
+        if production:
             production.customer_id = None
             db.session.add(production)
 
-    user = g.current_user
-    change_record = Change_record(change_userid=user.id, change_description='删除客户信息:id:' + str(customer_id))
+        user = g.current_user
+        change_record = Change_record(change_userid=user.id, change_description='删除客户信息:id:' + str(customer_id))
 
-    db.session.add(change_record)
-    db.session.commit()
+        db.session.add(change_record)
+        db.session.commit()
+    '''
 
-    #print(str(customer_id))
+
+    print(customer_id)
     return 'drop cussess!'
 
 
 @main.route('/user_drop/<int:user_id>', methods=['POST'])
 def user_drop(user_id):
-    #print(str(user_id))
+    print(user_id)
+    '''
     user = User.query.filter_by(id=user_id).first()
 
     if user:
@@ -807,4 +821,5 @@ def user_drop(user_id):
 
     db.session.add(change_record)
     db.session.commit()
+    '''
     return 'drop success!'

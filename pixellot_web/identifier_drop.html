@@ -6,7 +6,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<title>组件详情</title>
+		<title>组件删除</title>
 
 		<!-- Template CSS -->
 		<link rel="stylesheet" href="assets/css/style-starter.css">
@@ -98,17 +98,6 @@
 
 
 						<div class="user-dropdown-details d-flex" id="log">
-							<div class="profile_details_left" v-if="username !== null">
-							  <ul class="nofitications-dropdown">
-							    <li class="dropdown">
-							     <a href="#"><i class="fa fa-trash-o btn-danger" @click="pdrop"></i></a>
-							     </li>
-							    <li class="dropdown">
-							      <a href="#"><i
-							          class="fa fa-wrench" @click="pedit"></i></a>
-							      </li>
-							  </ul>
-							</div>
 							<div class="profile_details" v-if="username !== null">
 								<ul>
 								  <li class="dropdown profile_details_drop">
@@ -146,7 +135,7 @@
 								},
 								methods: {
 									pdrop: function () {
-										location.href="identifier_drop.html?identifier_nu=" + window.getParams("identifier_nu")
+										location.href="custormer_drop.html?customer_nu=" + window.getParams("customer_nu")
 									},
 									pedit: function () {
 										location.href="identifier_edit.html?identifier_nu=" + window.getParams("identifier_nu")
@@ -173,7 +162,7 @@
 						<ol class="breadcrumb my-breadcrumb">
 							<li class="breadcrumb-item"><a href="index.html">首页</a></li>
 							<li class="breadcrumb-item"><a href="identifiers.html">组件列表</a></li>
-							<li class="breadcrumb-item active" aria-current="page">组件详情</li>
+							<li class="breadcrumb-item active" aria-current="page">组件删除</li>
 						</ol>
 					</nav>
 					<!-- //breadcrumbs -->
@@ -182,7 +171,7 @@
 						<!-- forms 2 -->
 						<div class="card card_border py-2 mb-4">
 							<div class="cards__heading">
-								<h3>组件详情 <span></span></h3>
+								<h3>组件删除 <span></span></h3>
 							</div>
 							<div class="card-body">
 								<form action="#" method="post">
@@ -225,6 +214,7 @@
 												{{ item.production_type }}
 											</div>
 										</li>
+										<input type="button" value="确认删除" class="btn btn-danger btn-style mt-4" @click="drop" />
 									</div>
 									<script type="text/javascript">
 										function getParams(key) {
@@ -245,6 +235,17 @@
 												identifier_nu: null
 											},
 											methods: {
+												drop: function(event) {
+													alert('确定删除当前设备信息？');
+													path = '/identifier_drop/' + this.item.id,
+													pixellot
+														.post(path)
+														.then()
+														.catch(function (error) { // 请求失败处理
+															console.log(error);
+														});
+														setTimeout("javascript:location.href='identifiers.html'", 100);
+												},
 												open: function (identifier_nu) {
 														location.href="identifier_edit.html?identifier_nu=" + this.identifier_nu
 												}

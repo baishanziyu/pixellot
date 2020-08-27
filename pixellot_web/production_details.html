@@ -101,6 +101,9 @@
 							<div class="profile_details_left" v-if="username !== null">
 							  <ul class="nofitications-dropdown">
 							    <li class="dropdown">
+							     <a href="#"><i class="fa fa-trash-o btn-danger" @click="pdrop"></i></a>
+							     </li>
+							    <li class="dropdown">
 							      <a href="#"><i
 							          class="fa fa-wrench" @click="pedit"></i></a>
 							      </li>
@@ -142,6 +145,9 @@
 									username: localStorage.getItem('username')
 								},
 								methods: {
+									pdrop: function () {
+										location.href="production_drop.html?production_nu=" + window.getParams("production_nu")
+									},
 									pedit: function () {
 										location.href="production_edit.html?production_nu=" + window.getParams("production_nu")
 									},
@@ -176,7 +182,7 @@
 						<!-- forms 2 -->
 						<div class="card card_border py-2 mb-4">
 							<div class="cards__heading">
-								<h3>产品列表 <span></span></h3>
+								<h3>产品详情 <span></span></h3>
 							</div>
 							<div class="card-body">
 								<form action="#" method="post">

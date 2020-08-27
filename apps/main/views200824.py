@@ -1,43 +1,33 @@
 from flask import jsonify, g, request
 from . import main
-from ..models import db, User, Customer, Production, Product_type, Identifier_type, \
+from ..models import db, User, Customer, Production, Product_type, Identifier_type,\
     Iid, Identifier, Change_record, Repair_record, Adress, Pt_i
-
 
 ##数据展示
 @main.route('/users/', methods=['GET', 'POST'])
 def users():
     users = User.query.all()
-    return jsonify({'users': [user.to_json() for user in users]})
-
+    return jsonify({'users' : [user.to_json() for user in users]})
 
 @main.route('/productions/', methods=['GET', 'POST'])
 def productions():
     customers = Customer.query.all()
     productions = Production.query.all()
     product_types = Product_type.query.all()
-    return jsonify({'productions': [production.to_json() for production in productions],
-                    'product_types': [product_type.to_json() for product_type in product_types],
-                    'customers': [customer.to_json() for customer in customers]})
-
+    return jsonify({'productions' : [production.to_json() for production in productions], 'product_types' : [product_type.to_json() for product_type in product_types], 'customers' : [customer.to_json() for customer in customers]})
 
 @main.route('/product_types/', methods=['GET', 'POST'])
 def product_types():
     product_types = Product_type.query.all()
     identifiers = Identifier.query.all()
     productions = Production.query.filter(Production.product_type_id.is_(None)).all()
-    return jsonify({'product_types': [product_type.to_json() for product_type in product_types],
-                    'identifiers': [identifier.to_json() for identifier in identifiers],
-                    'productions': [production.to_json() for production in productions]})
-
+    return jsonify({'product_types' : [product_type.to_json() for product_type in product_types], 'identifiers': [identifier.to_json() for identifier in identifiers],'productions': [production.to_json() for production in productions]})
 
 @main.route('/identifier_types/', methods=['GET', 'POST'])
 def identifier_types():
     identifier_types = Identifier_type.query.all()
     identifiers = Identifier.query.all()
-    return jsonify({'identifier_types': [identifier_type.to_json() for identifier_type in identifier_types],
-                    'identifiers': [identifier.to_json() for identifier in identifiers]})
-
+    return jsonify({'identifier_types' : [identifier_type.to_json() for identifier_type in identifier_types],'identifiers': [identifier.to_json() for identifier in identifiers]})
 
 @main.route('/iids/', methods=['GET', 'POST'])
 def iids():
@@ -45,40 +35,31 @@ def iids():
     iids = Iid.query.all()
     identifiers = Identifier.query.all()
     pt_is = Pt_i.query.all()
-    return jsonify({'pt_is': [pt_i.to_json() for pt_i in pt_is],
-                    'productions': [production.to_json() for production in productions],
-                    'identifiers': [identifier.to_json() for identifier in identifiers],
-                    'iids': [iid.to_json() for iid in iids]})
-
+    return jsonify({'pt_is' : [pt_i.to_json() for pt_i in pt_is], 'productions' : [production.to_json() for production in productions], 'identifiers' : [identifier.to_json() for identifier in identifiers], 'iids' : [iid.to_json() for iid in iids]})
 
 @main.route('/identifiers/', methods=['GET', 'POST'])
 def identifiers():
     identifier_types = Identifier_type.query.all()
     identifiers = Identifier.query.all()
     product_types = Product_type.query.all()
-    return jsonify({'product_types': [product_type.to_json() for product_type in product_types],
-                    'identifier_types': [identifier_type.to_json() for identifier_type in identifier_types],
-                    'identifiers': [identifier.to_json() for identifier in identifiers]})
-
+    return jsonify({'product_types' : [product_type.to_json() for product_type in product_types], 'identifier_types' : [identifier_type.to_json() for identifier_type in identifier_types],'identifiers' : [identifier.to_json() for identifier in identifiers]})
 
 @main.route('/customers/', methods=['GET', 'POST'])
 def customers():
     productions = Production.query.filter(Production.customer_id.is_(None)).all()
     customers = Customer.query.all()
-    first_adress = Adress.query.filter(Adress.adcode % 10000 == 0)
+    first_adress = Adress.query.filter(Adress.adcode%10000==0)
     second_adress = Adress.query.all()
-    return jsonify({'productions': [production.to_json() for production in productions],
-                    'customers': [customer.to_json() for customer in customers],
-                    'first_adress': [first.to_json() for first in first_adress],
-                    'second_adress': [second.to_json() for second in second_adress]
+    return jsonify({'productions' : [production.to_json() for production in productions],
+                    'customers' : [customer.to_json() for customer in customers],
+                    'first_adress':[first.to_json() for first in first_adress],
+                    'second_adress':[second.to_json() for second in second_adress]
                     })
-
 
 @main.route('/change_records/', methods=['GET', 'POST'])
 def change_records():
     change_records = Change_record.query.all()
-    return jsonify({'change_records': [change_record.to_json() for change_record in change_records]})
-
+    return jsonify({'change_records' : [change_record.to_json() for change_record in change_records]})
 
 ##数据编辑
 @main.route('/production_edit/', methods=['GET', 'POST'])
@@ -108,7 +89,7 @@ def production_edit():
 
     for production_repair_record in item.get('production_repair_record'):
         if not production_repair_record.get('record_id'):
-            re = Repair_record(content=production_repair_record.get('record_content'), production_id=production.id)
+            re = Repair_record(content=production_repair_record.get('record_content'),production_id=production.id)
             db.session.add(re)
             db.session.commit()
         else:
@@ -118,9 +99,7 @@ def production_edit():
             db.session.commit()
     for production_iid in item.get('production_iids'):
         if not production_iid.get('iid_id'):
-            iid = Iid(production_id=production.id, product_id=production_iid.get('iid_product_id'),
-                      serial_number=production_iid.get('iid_serial_number'),
-                      identifier_id=Identifier().query.filter_by(item=production_iid.get('iid_name')).first().id)
+            iid = Iid(production_id=production.id,product_id=production_iid.get('iid_product_id'),serial_number=production_iid.get('iid_serial_number'),identifier_id=Identifier().query.filter_by(item=production_iid.get('iid_name')).first().id)
             db.session.add(iid)
             db.session.commit()
         else:
@@ -131,7 +110,6 @@ def production_edit():
             db.session.add(iid)
             db.session.commit()
     return 'production_edit susses!'
-
 
 @main.route('/product_type_edit/', methods=['POST'])
 def product_type_edit():
@@ -169,7 +147,6 @@ def product_type_edit():
                     db.session.commit()
     return 'product_type_edit susses!'
 
-
 @main.route('/identifier_edit/', methods=['POST'])
 def identifier_edit():
     items = request.get_json(silent=True)
@@ -182,7 +159,7 @@ def identifier_edit():
 
     item = items.get('item')
     id = item.get('id')
-    identifier_name = item.get('identifier_name')
+    identifier_name= item.get('identifier_name')
     type = item.get('production_type')
     production_name = item.get('production_name')
     product_id = item.get('product_id')
@@ -202,7 +179,6 @@ def identifier_edit():
     db.session.add(iid)
     db.session.commit()
     return 'identifier_edit susses!'
-
 
 @main.route('/identifier_name_edit/', methods=['POST'])
 def identifier_name_edit():
@@ -230,12 +206,11 @@ def identifier_name_edit():
     for pt in pt_is:
         if (not pt.get('id')) and pt.get('name'):
             p_type = Product_type.query.filter_by(name=pt.get('name')).first()
-            if not Pt_i.query.filter_by(product_type_id=p_type.id, identifier_id=identifier.id).first():
-                pt_i = Pt_i(product_type_id=p_type.id, identifier_id=identifier.id)
+            if not Pt_i.query.filter_by(product_type_id=p_type.id,identifier_id=identifier.id).first():
+                pt_i = Pt_i(product_type_id=p_type.id,identifier_id=identifier.id)
                 db.session.add(pt_i)
                 db.session.commit()
     return 'identifier_name_edit susses!'
-
 
 @main.route('/identifier_type_edit/', methods=['POST'])
 def identifier_type_edit():
@@ -266,7 +241,6 @@ def identifier_type_edit():
                 db.session.add(identifier)
                 db.session.commit()
     return 'identifier_type_edit susses!'
-
 
 @main.route('/customer_edit/', methods=['POST'])
 def customer_edit():
@@ -302,7 +276,6 @@ def customer_edit():
             db.session.add(production)
             db.session.commit()
     return 'customer_edit susses!'
-
 
 @main.route('/account_edit/', methods=['POST'])
 def account_edit():
@@ -341,8 +314,8 @@ def production_add():
     location = item.get('production_location')
     iids = item.get('production_iids')
     repair_records = item.get('production_repair_record')
-    ty = Product_type.query.filter_by(name=item.get('production_type')).first()
-    customer = Customer.query.filter_by(customer_name=item.get('production_customer')).first()
+    ty = Product_type.query.filter_by(name = item.get('production_type')).first()
+    customer= Customer.query.filter_by(customer_name = item.get('production_customer')).first()
 
     if name:
         production = Production(name=name, count=count, date_in=date_in, date_out=date_out, location=location)
@@ -361,12 +334,10 @@ def production_add():
         if iids:
             for one in iids:
                 identifier = Identifier.query.filter_by(item=one.iid_name).first()
-                iid = Iid(product_id=one.iid_product_id, serial_number=one.iid_serial_number,
-                          identifier_id=identifier.id, production_id=production.id)
+                iid = Iid(product_id=one.iid_product_id, serial_number=one.iid_serial_number, identifier_id=identifier.id, production_id=production.id)
                 db.session.add(iid)
                 db.session.commit()
     return 'production_add susses!'
-
 
 @main.route('/product_type_add/', methods=['POST'])
 def product_type_add():
@@ -403,7 +374,6 @@ def product_type_add():
                     db.session.commit()
     return 'product_type_add susses!'
 
-
 @main.route('/identifier_add/', methods=['POST'])
 def identifier_add():
     items = request.get_json(silent=True)
@@ -428,14 +398,11 @@ def identifier_add():
     db.session.add(production)
     db.session.commit()
     if identifier_name:
-        if not Iid.query.filter_by(product_id=product_id, serial_number=serial_number, identifier_id=identifier.id,
-                                   production_id=production.id).first():
-            iid = Iid(product_id=product_id, serial_number=serial_number, identifier_id=identifier.id,
-                      production_id=production.id)
+        if not Iid.query.filter_by(product_id = product_id,serial_number = serial_number,identifier_id = identifier.id,production_id = production.id).first():
+            iid = Iid(product_id = product_id,serial_number = serial_number,identifier_id = identifier.id,production_id = production.id)
             db.session.add(iid)
             db.session.commit()
     return 'identifier_add susses!'
-
 
 @main.route('/identifier_name_add/', methods=['POST'])
 def identifier_name_add():
@@ -453,7 +420,7 @@ def identifier_name_add():
     pt_is = item.get('pt_is')
     type = Identifier_type.query.filter_by(name=identifier_type).first()
     if not Identifier.query.filter_by(item=name).first():
-        identifier = Identifier(item=name, identifier_type_id=type.id)
+        identifier = Identifier(item=name, identifier_type_id = type.id)
         db.session.add(identifier)
         db.session.commit()
     for pt in pt_is:
@@ -464,7 +431,6 @@ def identifier_name_add():
                 db.session.add(pt_i)
                 db.session.commit()
     return 'identifier_name_add susses!'
-
 
 @main.route('/identifier_type_add/', methods=['POST'])
 def identifier_type_add():
@@ -480,7 +446,7 @@ def identifier_type_add():
     name = item.get('name')
     identifiers = item.get('identifiers')
     if not Identifier_type.query.filter_by(name=name):
-        i_type = Identifier_type(name=name)
+        i_type = Identifier_type(name = name)
         db.session.add(i_type)
         db.session.commit()
         for one in identifiers:
@@ -494,7 +460,6 @@ def identifier_type_add():
                     db.session.add(identifier)
                     db.session.commit()
     return 'identifier_type_add susses!'
-
 
 @main.route('/customer_add/', methods=['POST'])
 def customer_add():
@@ -527,7 +492,6 @@ def customer_add():
                 db.session.commit()
     return 'customer_add susses!'
 
-
 @main.route('/account_add/', methods=['POST'])
 def account_add():
     items = request.get_json(silent=True)
@@ -540,7 +504,7 @@ def account_add():
 
     one = User.query.filter_by(username=items.get('username')).first()
     if (not one) and items.get('username') and items.get('password'):
-        user = User(username=items.get('username'), password=items.get('password'))
+        user = User(username = items.get('username'), password = items.get('password'))
         db.session.add(user)
         db.session.commit()
     return 'account_add susses!'
@@ -556,13 +520,11 @@ def record_delete():
     record = Repair_record.query.filter_by(id=record_id).first()
     if record:
         user = g.current_user
-        change_record = Change_record(change_userid=user.id,
-                                      change_description='维修记录删除:id:' + str(items.get('record_id')))
+        change_record = Change_record(change_userid=user.id, change_description='维修记录删除:id:' + str(items.get('record_id')))
         db.session.add(change_record)
         db.session.delete(record)
         db.session.commit()
     return 'record_delete susses!'
-
 
 @main.route('/iid_delete/', methods=['POST'])
 def iid_delete():
@@ -579,7 +541,6 @@ def iid_delete():
         db.session.commit()
     return 'iid_delete susses!'
 
-
 @main.route('/pt_i_delete/', methods=['POST'])
 def pt_i_delete():
     items = request.get_json(silent=True)
@@ -590,13 +551,11 @@ def pt_i_delete():
     print(pt_i_id)
     if pt_i:
         user = g.current_user
-        change_record = Change_record(change_userid=user.id,
-                                      change_description='组件_产品类型删除:id:' + str(items.get('pt_i_id')))
+        change_record = Change_record(change_userid=user.id, change_description='组件_产品类型删除:id:' + str(items.get('pt_i_id')))
         db.session.add(change_record)
         db.session.delete(pt_i)
         db.session.commit()
     return 'pt_i_delete susses!'
-
 
 ##关系清除
 @main.route('/p_pt_clear/', methods=['POST'])
@@ -609,13 +568,11 @@ def p_pt_clear():
     if production:
         production.product_type_id = None
         user = g.current_user
-        change_record = Change_record(change_userid=user.id,
-                                      change_description='组件_产品类型清除:id:' + str(items.get('pt_i_id')))
+        change_record = Change_record(change_userid=user.id, change_description='组件_产品类型清除:id:' + str(items.get('pt_i_id')))
         db.session.add(change_record)
         db.session.add(production)
         db.session.commit()
     return 'p_pt_clear susses!'
-
 
 @main.route('/i_it_clear/', methods=['POST'])
 def i_it_clear():
@@ -627,13 +584,11 @@ def i_it_clear():
     if identifier:
         identifier.identifier_type_id = None
         user = g.current_user
-        change_record = Change_record(change_userid=user.id,
-                                      change_description='组件_组件类型清除:id:' + str(items.get('i_it_id')))
+        change_record = Change_record(change_userid=user.id, change_description='组件_组件类型清除:id:' + str(items.get('i_it_id')))
         db.session.add(change_record)
         db.session.add(identifier)
         db.session.commit()
     return 'i_it_clear susses!'
-
 
 @main.route('/p_c_clear/', methods=['POST'])
 def p_c_clear():
@@ -645,25 +600,22 @@ def p_c_clear():
     if production:
         production.customer_id = None
         user = g.current_user
-        change_record = Change_record(change_userid=user.id,
-                                      change_description='客户_产品清除:id:' + str(items.get('p_c_id')))
+        change_record = Change_record(change_userid=user.id, change_description='客户_产品清除:id:' + str(items.get('p_c_id')))
         db.session.add(change_record)
         db.session.add(production)
         db.session.commit()
     return 'p_c_clear susses!'
-
 
 ##page_delete
 @main.route('/production_drop/<int:production_id>', methods=['POST'])
 def production_drop(production_id):
     production = Production.query.filter_by(id=production_id).first()
     if production:
-        iids = Iid.query.filter_by(production_id=production.id).all()
-        repair_record = Repair_record.query.filter_by(production_id=production.id).first()
-        if iids:
-            for iid in iids:
-                iid.production_id = None
-                db.session.add(iid)
+        iid = Iid.query.filter_by(production_id=production_id).first()
+        repair_record = Repair_record.query.filter_by(production_id=production_id).first()
+        if iid:
+            iid.production_id = None
+            db.session.add(iid)
 
         if repair_record:
             db.session.delete(repair_record)
@@ -674,137 +626,68 @@ def production_drop(production_id):
         db.session.add(change_record)
         db.session.delete(production)
         db.session.commit()
-    #print(str(production_id))
-    return 'drop success!'
 
-
-@main.route('/product_type_drop/<int:product_type_id>', methods=['POST'])
+@main.route('/product_type_drop/<int:ptoduct_type_id>', methods=['POST'])
 def product_type_drop(product_type_id):
     product_type = Product_type.query.filter_by(id=product_type_id).first()
-    productions = Production.query.filter_by(product_type_id=product_type_id).all()
+    production = Production.query.filter_by(product_type_id=product_type_id).first()
     pt_i = Pt_i.query.filter_by(product_type_id=product_type_id).first()
 
     if product_type:
         db.session.delete(product_type)
 
-    if productions:
-        for production in productions:
-            production.product_type_id = None
-            db.session.add(production)
+    if production:
+        production.product_type_id = None
+        db.session.add(production)
 
     if pt_i:
         db.session.delete(pt_i)
-
+    
     user = g.current_user
     change_record = Change_record(change_userid=user.id, change_description='删除设备类型:id:' + str(product_type_id))
 
     db.session.add(change_record)
     db.session.commit()
-    #print(str(product_type_id))
-    return 'drop cussess!'
-
 
 @main.route('/identifier_drop/<int:identifier_id>', methods=['POST'])
 def identifier_drop(identifier_id):
     identifier = Identifier.query.filter_by(id=identifier_id).first()
     pt_i = Pt_i.query.filter_by(identifier_id=identifier_id).first()
 
-    iids = Iid.query.filter_by(identifier_id=identifier_id).all()
+    iid = Iid.query.filter_by(identifier_id=identifier_id).first()
 
     if identifier:
         db.session.delete(identifier)
-
+    
     if pt_i:
         db.session.delete(pt_i)
 
-    if iids:
-        for iid in iids:
-            iid.identifier_id = None
-            db.session.add(iid)
+    if iid:
+        iid.identifier_id = None
+        db.session.add(iid)
 
     user = g.current_user
     change_record = Change_record(change_userid=user.id, change_description='删除组件名称:' + str(identifier.item))
 
     db.session.add(change_record)
     db.session.commit()
-    #print(str(identifier_id))
-    return 'drop cussess!'
-
 
 @main.route('/identifier_type_drop/<int:identifier_type_id>', methods=['POST'])
 def identifier_type_drop(identifier_type_id):
     identifier_type = Identifier_type.query.filter_by(id=identifier_type_id).first()
-
-    identifiers= Identifier.query.filter_by(identifier_type_id=identifier_type_id).all()
+           
+    identifier= Identifier.query.filter_by(identifier_type_id=identifier_type_id).first()
 
     if identifier_type:
         db.session.delete(identifier_type)
 
-    if identifiers:
-        for idengtifier in identifiers:
-            identifier.identifier_type_id = None
-            db.session.add(identifier)
+    if identifier:
+        identifier.identifier_type_id = None
+        db.session.add(identifier)
 
         user = g.current_user
         change_record = Change_record(change_userid=user.id, change_description='删除组件类型:id:' + str(identifier_type_id))
 
         db.session.add(change_record)
         db.session.commit()
-    #print(str(identifier_type_id))
-    return 'drop cussess!'
 
-
-@main.route('/iid_drop/<int:iid_id>', methods=['POST'])
-def iid_drop(iid_id):
-    iid = Iid.query.filter_by(id=iid_id).first()
-
-    if iid:
-        db.session.delete(iid)
-
-    user = g.current_user
-    change_record = Change_record(change_userid=user.id, change_description='删除组件:id:' + str(iid_id))
-
-    db.session.add(change_record)
-    db.session.commit()
-
-    #print(str(iid_id))
-    return 'drop cussess!'
-
-
-@main.route('/customer_drop/<int:customer_id>', methods=['POST'])
-def customer_drop(customer_id):
-    customer = Customer.query.filter_by(id=customer_id).first()
-    productions = Production.query.filter_by(customer_id=customer_id).all()
-
-    if customer:
-        db.session.delete(customer)
-
-    if productions:
-        for production in productions:
-            production.customer_id = None
-            db.session.add(production)
-
-    user = g.current_user
-    change_record = Change_record(change_userid=user.id, change_description='删除客户信息:id:' + str(customer_id))
-
-    db.session.add(change_record)
-    db.session.commit()
-
-    #print(str(customer_id))
-    return 'drop cussess!'
-
-
-@main.route('/user_drop/<int:user_id>', methods=['POST'])
-def user_drop(user_id):
-    #print(str(user_id))
-    user = User.query.filter_by(id=user_id).first()
-
-    if user:
-        db.session.delete(user)
-
-    user = g.current_user
-    change_record = Change_record(change_userid=user.id, change_description='删除账号:id:' + str(user_id))
-
-    db.session.add(change_record)
-    db.session.commit()
-    return 'drop success!'
