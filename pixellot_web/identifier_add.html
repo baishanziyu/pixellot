@@ -190,9 +190,9 @@
 											<option v-for="name in productions" v-if="name.product_type == item.production_type">{{ name.name }}</option>
 										</select>
 										<label for="inputEmail4" class="input__label">产品号</label>
-										<input type="text" class="form-control" id="addnumber" v-model='item.product_id' placeholder="产品名称">
+										<input type="text" class="form-control" id="addnumber" v-model='item.product_id' placeholder="产品号">
 										<label for="inputEmail4" class="input__label">序列号</label>
-										<input type="text" class="form-control" id="addnumber" v-model='item.serial_number' placeholder="产品名称">
+										<input type="text" class="form-control" id="addnumber" v-model='item.serial_number' placeholder="序列号">
 									</div>
 								</form>
 								<input type="button" value="提交" class="btn btn-danger btn-style mt-4" @click="identifier_add_submit" />

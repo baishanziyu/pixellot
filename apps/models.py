@@ -172,8 +172,8 @@ class Product_type(db.Model):
         if Pt_i.query.filter_by(product_type_id=self.id).all():
             pt_is = Pt_i.query.filter_by(product_type_id=self.id).all()
             for pt_i in pt_is:
-                if Product_type.query.filter_by(id=pt_i.product_type_id).first():
-                    ptis.append({'id':pt_i.id,'name': Product_type.query.filter_by(id=pt_i.product_type_id).first().name})
+                if Identifier.query.filter_by(id=pt_i.identifier_id).first():
+                    ptis.append({'id':pt_i.id,'name': Identifier.query.filter_by(id=pt_i.identifier_id).first().item})
                 else:
                     ptis.append({'id':pt_i.id,'name': None})
         json_product_type = {
@@ -181,7 +181,7 @@ class Product_type(db.Model):
             'name': self.name,
             'productions': [{'id':production.id, 'name':production.name} for production in productions],
             'pt_is': ptis
-            #'pt_is':[{'id':pt_i.id,'name': Product_type.query.filter_by(id=pt_i.product_type_id).first().name} for pt_i in pt_is]
+            #'pt_is':[{'id':pt_i.id,'name': Identifier.query.filter_by(id=pt_i.product_type_id).first().item} for pt_i in pt_is]
         }
         return json_product_type
 

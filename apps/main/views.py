@@ -191,14 +191,16 @@ def identifier_edit():
     identifier = Identifier.query.filter_by(item=identifier_name).first()
     production = Production.query.filter_by(name=production_name).first()
     product_type = Product_type.query.filter_by(name=type).first()
-    production.product_type_id = product_type.id
+    if product_type:
+        production.product_type_id = product_type.id
     db.session.add(production)
     db.session.commit()
     iid = Iid.query.filter_by(id=id).first()
-    iid.product_id = product_id
-    iid.serial_number = serial_number
-    iid.identifier_id = identifier.id
-    iid.production_id = production.id
+    if iid:
+        iid.product_id = product_id
+        iid.serial_number = serial_number
+        iid.identifier_id = identifier.id
+        iid.production_id = production.id
     db.session.add(iid)
     db.session.commit()
     return 'identifier_edit susses!'
@@ -327,6 +329,7 @@ def account_edit():
 @main.route('/production_add/', methods=['GET', 'POST'])
 def production_add():
     item = request.get_json(silent=True)
+    #print(item)
     if not item:
         return 'production_add change error!'
     user = g.current_user
@@ -341,18 +344,21 @@ def production_add():
     location = item.get('production_location')
     iids = item.get('production_iids')
     repair_records = item.get('production_repair_record')
+
     ty = Product_type.query.filter_by(name=item.get('production_type')).first()
     customer = Customer.query.filter_by(customer_name=item.get('production_customer')).first()
 
     if name:
-        production = Production(name=name, count=count, date_in=date_in, date_out=date_out, location=location)
+        production = Production(name=name, count=count, date_in=date_in, date_out=date_out)
         if ty:
             production.product_type_id = ty.id
         if customer:
             production.customer_id = customer.id
+        if location:
+            production.location = location
         db.session.add(production)
         db.session.commit()
-
+        
         if repair_records:
             for rr in repair_records:
                 repair_record = Repair_record(content=rr.record_content, production_id=production.id)
@@ -361,8 +367,9 @@ def production_add():
         if iids:
             for one in iids:
                 identifier = Identifier.query.filter_by(item=one.iid_name).first()
-                iid = Iid(product_id=one.iid_product_id, serial_number=one.iid_serial_number,
-                          identifier_id=identifier.id, production_id=production.id)
+                if identifier:
+                    iid = Iid(product_id=one.iid_product_id, serial_number=one.iid_serial_number, 
+                            identifier_id=identifier.id, production_id=production.id)
                 db.session.add(iid)
                 db.session.commit()
     return 'production_add susses!'
@@ -371,6 +378,7 @@ def production_add():
 @main.route('/product_type_add/', methods=['POST'])
 def product_type_add():
     items = request.get_json(silent=True)
+    #print(items)
     if not items:
         return 'product_type_add change error!'
     user = g.current_user
@@ -381,24 +389,24 @@ def product_type_add():
     item = items.get('item')
     if not item.get('name'):
         return 'product_type_add change error cause no name!'
-    type = Product_type(name=item.get('name'))
-    db.session.add(type)
+    i_type = Product_type(name=item.get('name'))
+    db.session.add(i_type)
     db.session.commit()
     productions = item.get('productions')
     for p in productions:
         if (not p.get('id')) and p.get('name'):
             production = Production.query.filter_by(name=p.name).first()
             if production:
-                production.product_type_id = type.id
+                production.product_type_id = i_type.id
                 db.session.add(production)
                 db.session.commit()
     pt_is = item.get('pt_is')
     for pt in pt_is:
         if (not pt.get('id')) and pt.get('name'):
-            identifier = Identifier.query.filter_by(item=pt.name).first()
+            identifier = Identifier.query.filter_by(item=pt.get('name')).first()
             if identifier:
-                if not Pt_i.query.filter_by(product_type_id=type.id, identifier_id=identifier.id).first():
-                    pt_i = Pt_i(product_type_id=type.id, identifier_id=identifier.id)
+                if not Pt_i.query.filter_by(product_type_id=i_type.id, identifier_id=identifier.id).first():
+                    pt_i = Pt_i(product_type_id=i_type.id, identifier_id=identifier.id)
                     db.session.add(pt_i)
                     db.session.commit()
     return 'product_type_add susses!'
@@ -416,22 +424,28 @@ def identifier_add():
 
     item = items.get('item')
     identifier_name = item.get('identifier_name')
-    type = item.get('production_type')
+    i_type = item.get('production_type')
     production_name = item.get('production_name')
     product_id = item.get('product_id')
     serial_number = item.get('serial_number')
 
     identifier = Identifier.query.filter_by(item=identifier_name).first()
     production = Production.query.filter_by(name=production_name).first()
-    product_type = Product_type.query.filter_by(name=type).first()
-    production.product_type_id = product_type.id
-    db.session.add(production)
-    db.session.commit()
+    product_type = Product_type.query.filter_by(name=i_type).first()
+    if product_type and production:
+        production.product_type_id = product_type.id
+        db.session.add(production)
+        db.session.commit()
     if identifier_name:
-        if not Iid.query.filter_by(product_id=product_id, serial_number=serial_number, identifier_id=identifier.id,
-                                   production_id=production.id).first():
-            iid = Iid(product_id=product_id, serial_number=serial_number, identifier_id=identifier.id,
-                      production_id=production.id)
+        p_id = None
+        i_id = None
+        if not Iid.query.filter_by(product_id=product_id, serial_number=serial_number).first():
+            if production:
+                p_id = production.id
+            if identifier:
+                i_id = identifier.id
+            iid = Iid(product_id=product_id, serial_number=serial_number, identifier_id=i_id,
+                      production_id=p_id)
             db.session.add(iid)
             db.session.commit()
     return 'identifier_add susses!'
@@ -469,6 +483,7 @@ def identifier_name_add():
 @main.route('/identifier_type_add/', methods=['POST'])
 def identifier_type_add():
     items = request.get_json(silent=True)
+    #print(items)
     if not items:
         return 'identifier_type_add change error!'
     user = g.current_user
@@ -479,7 +494,8 @@ def identifier_type_add():
     item = items.get('item')
     name = item.get('name')
     identifiers = item.get('identifiers')
-    if not Identifier_type.query.filter_by(name=name):
+    if not Identifier_type.query.filter_by(name=name).first():
+        #print('true')
         i_type = Identifier_type(name=name)
         db.session.add(i_type)
         db.session.commit()
@@ -587,7 +603,7 @@ def pt_i_delete():
         return 'pt_i_delete error!'
     pt_i_id = items.get('pt_i_id')
     pt_i = Pt_i.query.filter_by(id=pt_i_id).first()
-    print(pt_i_id)
+    #print(pt_i_id)
     if pt_i:
         user = g.current_user
         change_record = Change_record(change_userid=user.id,

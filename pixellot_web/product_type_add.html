@@ -172,14 +172,15 @@
 									<div class="form-row" id='product_type_add'>
 										<div class="form-group col-md-12">
 											<label for="inputEmail4" class="input__label">类型名称</label>
-											<input type="text" class="form-control" id="addnumber" v-model='production_name' placeholder="产品名称">
+											<input type="text" class="form-control" v-model='item.name' placeholder="类型名称">
 										</div>
 										<label for="inputEmail4" class="input__label">组件组成</label>
 										<div class="card-body para__style col-md-12">
 											<table class="table  table-striped" style="word-break:break-all; word-wrap:break-all;">
 												<thead>
 													<tr>
-														<th style="white-space: nowrap">序号<input type="button" value="增加组件" class="btn btn-link d-inline" @click="item.pt_is.push({'name':null})" />
+														<th style="white-space: nowrap">序号
+															<input type="button" value="增加组件" class="btn btn-link d-inline" @click="item.pt_is.push({'name':null})" />
 														</th>
 														<th style="white-space: nowrap">组件</th>
 														<th style="white-space: nowrap">操作</th>
@@ -280,24 +281,13 @@
 											methods: {
 												production_add_submit: function() {
 													pixellot
-														.post('/production_add/', {
-															production_id: this.production_id,
-															production_name: this.production_name,
-															production_type: this.production_type,
-															production_iids: this.production_iids,
-															production_count: this.production_count,
-															production_date_in: this.production_date_in,
-															production_date_out: this.production_date_out,
-															production_repair_record: this.production_repair_record,
-															production_location: this.production_location,
-															production_customer: this.production_customer,
-															productions: this.productions,
-															identifiers: this.identifiers
+														.post('/product_type_add/', {
+															item: this.item
 														})
 														.then()
 														.catch();
 													alert('确定添加？');
-													setTimeout("javascript:location.href='index.html'", 100);
+													setTimeout("javascript:location.href='product_type.html'", 100);
 												}
 											},
 											mounted() {
@@ -305,16 +295,7 @@
 													.get('/product_types/')
 													.then(response =>
 														(
-															this.production_id = this.item.id,
-															this.production_name = this.item.name,
-															this.production_type = this.item.product_type,
-															this.production_iids = this.item.iids,
-															this.production_count = this.item.count,
-															this.production_date_in = this.item.date_in,
-															this.production_date_out = this.item.date_out,
-															this.production_repair_record = this.item.records,
-															this.production_location = this.item.location,
-															this.production_customer = this.item.customer,
+															this.item = response.data.product_types[window.getParams("product_type_nu")],
 															this.productions = response.data.productions,
 															this.identifiers = response.data.identifiers
 														))

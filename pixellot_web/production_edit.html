@@ -98,11 +98,6 @@
 
 
 						<div class="user-dropdown-details d-flex" id="log">
-							<div class="profile_details_left" v-if="username !== null">
-							  <a class="btn btn-danger" href="#" aria-label="Delete" @click="page_delete">
-							    <i class="fa fa-trash-o" aria-hidden="true"></i>
-							  </a>
-							</div>
 							<div class="profile_details" v-if="username !== null">
 								<ul>
 								  <li class="dropdown profile_details_drop">
@@ -318,7 +313,7 @@
 												production_location: '',
 												production_customer: '',
 												product_types: '',
-												types: null,
+												types: [{name:null}],
 												customers: '',
 												change: false,
 												add_record: false,
@@ -360,7 +355,7 @@
 														};
 													},
 													add_identifier: function () {
-														if (this.types == null)
+														if (this.types[0].name)
 														{
 															for (var i in this.product_types)  // x 为属性名
 															{
